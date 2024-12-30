@@ -1,8 +1,0 @@
-description = 'Module 3 Batch'
-
-dependencies {
-    api project(':common:common-batch')
-    api project(':module3-api:module3-api-core')
-}
-
-defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

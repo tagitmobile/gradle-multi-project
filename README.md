@@ -32,13 +32,17 @@ Root project 'sample-services' - Sample Multi-Project Build
 |    +--- Project ':module1:module1-mapper-mobile' - Module 1 Mapper
 |    +--- Project ':module1:module1-mapper-web' - Module 1 Mapper
 |    \--- Project ':module1:module1-template' - Module 1 Template
-\--- Project ':module2' - Project Module 2
-     +--- Project ':module2:module2-batch' - Module 2 Batch
-     +--- Project ':module2:module2-core' - Module 2 Core
-     +--- Project ':module2:module2-host-integration' - Module 2 Host Integration
-     +--- Project ':module2:module2-mapper-mobile' - Module 2 Mapper
-     +--- Project ':module2:module2-mapper-web' - Module 2 Mapper
-     \--- Project ':module2:module2-template' - Module 2 Template
++--- Project ':module2' - Project Module 2
+|    +--- Project ':module2:module2-batch' - Module 2 Batch
+|    +--- Project ':module2:module2-core' - Module 2 Core
+|    +--- Project ':module2:module2-host-integration' - Module 2 Host Integration
+|    +--- Project ':module2:module2-mapper-mobile' - Module 2 Mapper
+|    +--- Project ':module2:module2-mapper-web' - Module 2 Mapper
+|    \--- Project ':module2:module2-template' - Module 2 Template
+\--- Project ':module3-api' - Project Module 3 with Spring Boot API sub-module
+     +--- Project ':module3-api:module3-api-api' - Module 3 API (a Spring Boot Application)
+     +--- Project ':module3-api:module3-api-core' - Module 3 Core
+     \--- Project ':module3-api:module3-api-host-integration' - Module 3 Host Integration
 
 To see a list of the tasks of a project, run gradlew <project-path>:tasks
 ```
