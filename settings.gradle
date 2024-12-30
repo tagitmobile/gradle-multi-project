@@ -1,0 +1,44 @@
+// [rj.added 2020.04.22] Using the Gradle's new plugins DSL
+pluginManagement {
+    repositories {
+    	gradlePluginPortal()
+// 		jcenter()
+// 		mavenCentral()
+   		maven {
+      		url "https://plugins.gradle.org/m2/"  // delombok [rj.added 2020.04.18]	
+    	}
+    }
+}
+
+// Include sub-projects
+file('.').listFiles().each {
+   def buildfile = it.name + '.gradle';
+//   println "[settings] Evaluating ${it.name} and presence of '${buildfile}'"
+   if (it.directory /*&& it.name.startsWith("mrb-")*/ && new File(it, buildfile).exists()) {
+      // modules
+      println "[settings] Including :${it.name}"
+	  include ":${it.name}"
+	  // module projects
+	  def pname = it.name;
+	  file(it).listFiles().each {
+		def isExcludeFolders = it.name in ['deploy', 'build', '.settings', 'gradle', 'lib', 'extlib']
+		if (it.directory && !isExcludeFolders) {
+			println "[settings] Including :${pname}:${it.name}"
+			include ":${pname}:${it.name}"
+		}
+	  }
+   }
+}
+
+rootProject.name = "sample-services"
+rootProject.children.each {project ->
+    // modules
+	println "[settings] Setting ${project} build file name to '${project.name}.gradle'"
+	project.buildFileName = "${project.name}.gradle"
+	// module projects
+	project.children.each { childProject ->
+		println "[settings] Setting ${childProject} name to '${project.name}-${childProject.name}' and build file name to '${project.name}-${childProject.name}.gradle'"
+		childProject.name = "${project.name}-${childProject.name}"
+		childProject.buildFileName = "${childProject.name}.gradle"
+	}
+}

@@ -1,0 +1,8 @@
+description = 'Module 1 Mapper'
+
+dependencies {
+    api project(':common:common-mapper')
+    api project(':module1:module1-core')
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

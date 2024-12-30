@@ -1,0 +1,18 @@
+description = 'Common Core'
+
+// [rj.added 2020.11.04] make certain dependencies optional based on feature variants (https://docs.gradle.org/6.4.1/userguide/feature_variants.html)
+java {
+    registerFeature('mobeixSupport') {
+        usingSourceSet(sourceSets.main)
+    }
+}
+
+dependencies {
+    // --------------------------------------------------
+    // Mobeix
+    // --------------------------------------------------
+    mobeixSupportImplementation "com.mobeix:mxprof:${mobeixVersion}" // do not expose transitively to ensure maximum backward compatibility
+    mobeixSupportImplementation "com.mobeix:filterext:${mobeixVersion}" // do not expose transitively to ensure maximum backward compatibility
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

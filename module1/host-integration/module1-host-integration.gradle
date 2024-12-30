@@ -1,0 +1,8 @@
+description = 'Module 1 Host Integration'
+
+dependencies {
+    api project(':common:common-host-integration')
+    api project(':module1:module1-core')
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

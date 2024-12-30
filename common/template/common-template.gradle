@@ -1,0 +1,7 @@
+description = 'Common Template'
+
+dependencies {
+
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

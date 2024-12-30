@@ -1,0 +1,7 @@
+description = 'Project Module 1'
+
+dependencies {
+
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

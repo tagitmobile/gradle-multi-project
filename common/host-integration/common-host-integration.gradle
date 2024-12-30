@@ -1,0 +1,7 @@
+description = 'Common Host Integration'
+
+dependencies {
+    api project(':common:common-core')
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

@@ -1,0 +1,8 @@
+description = 'Module 2 Batch'
+
+dependencies {
+    api project(':common:common-batch')
+    api project(':module2:module2-core')
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'
