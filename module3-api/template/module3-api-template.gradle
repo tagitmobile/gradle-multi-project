@@ -1,0 +1,8 @@
+description = 'Module 3 Template'
+
+dependencies {
+    api project(':common:common-template')
+    api project(':module3-api:module3-api-core')
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'
