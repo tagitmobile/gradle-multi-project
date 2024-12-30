@@ -1,5 +1,7 @@
 # gradle-multi-project
-Template for Multi-Project Gradle Workspaces
+Template for Multi-Project Gradle Workspaces to implement the best practice in PPDG eDocs.
+
+![image](https://github.com/user-attachments/assets/cc7bde8f-7027-498b-890e-0fb03dc71e7e)
 
 ## Sample Project Structure
 
