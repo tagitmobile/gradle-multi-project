@@ -52,8 +52,16 @@ To see a list of the tasks of a project, run gradlew <project-path>:tasks
 1. Fork this project
 1. Open `settings.gradle` and modify `rootProject.name` to your project name.
 1. Open `gradle.properties` and modify the relevant properties accordingly such as the project version or project group for publishing to Nexus.
-1. Rename `module1` and `module2` directory accordingly along with the `module1.gradle` and `module2.gradle` to your desired artifact name with prefix. Ensure that the sub-module directories and gradle files are also renamed, i.e. `module1-core` and `module1-core.gradle`, etc.
-1. Modify the dependencies of the modules in the `.gradle` files. Cross module dependency can be defined by following https://docs.gradle.org/current/userguide/declaring_dependencies_between_subprojects.html#sec:project_jar_dependencies Gradle sub-project dependency guidelines.
-1. If necessary, create more module directories by replicating `module1` or `module2` and renaming accordingly.
+1. Rename the `module1` and `module2` directories accordingly along with the `module1.gradle` and `module2.gradle` to your desired artifact name with prefix. Ensure that the sub-module directories and gradle files are also renamed, i.e. `module1-core` and `module1-core.gradle`, etc.
+
+     For example: 
+     - `abc-casa`, `abc-casa.gradle`, `abc-casa-batch`, `abc-casa-core`, `abc-casa-host-integration`, `abc-casa-mapper` and `abc-casa-template` for `module1`
+     - `abc-fund-transfer`, `abc-fund-transfer.gradle`, `abc-fund-transfer-batch`, `abc-fund-transfer-core`, `abc-fund-transfer-host-integration`, `abc-fund-transfer-mapper` and `abc-fund-transfer-template` for `module2`
+     - and so on...
+   
+   NOTE: The prefix must be consistent across your project.    
+
+1. Modify the dependencies of the modules in the `.gradle` files. Cross-module dependency can be defined by following https://docs.gradle.org/current/userguide/declaring_dependencies_between_subprojects.html#sec:project_jar_dependencies Gradle sub-project dependency guidelines.
+1. If necessary, create more module directories by replicating `module1` or `module2` and renaming them accordingly.
 
 
