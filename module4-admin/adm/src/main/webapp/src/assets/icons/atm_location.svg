@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>atm_location</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="21" cy="21" r="21"></circle>
+        <filter x="-16.7%" y="-11.9%" width="133.3%" height="133.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="98.8257384%" x2="50%" y2="-2.92426219%" id="linearGradient-3">
+            <stop stop-color="#00BDCD" offset="0%"></stop>
+            <stop stop-color="#0058A5" offset="39.4879405%"></stop>
+            <stop stop-color="#EC1D25" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="84.1324939%" y1="97.0659487%" x2="33.0878585%" y2="2.03421897%" id="linearGradient-4">
+            <stop stop-color="#00BDCD" offset="0%"></stop>
+            <stop stop-color="#0058A5" offset="48.6735228%"></stop>
+            <stop stop-color="#EC1D25" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="-6.23351199%" id="linearGradient-5">
+            <stop stop-color="#00BDCD" offset="0%"></stop>
+            <stop stop-color="#0058A5" offset="39.2137489%"></stop>
+            <stop stop-color="#EC1D25" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.4298628%" y1="96.1343324%" x2="28.3639923%" y2="1.55983762%" id="linearGradient-6">
+            <stop stop-color="#00BDCD" offset="0%"></stop>
+            <stop stop-color="#0058A5" offset="21.4230591%"></stop>
+            <stop stop-color="#EC1D25" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Prelogin" transform="translate(-4018.000000, -3729.000000)">
+            <g id="One-time-access-code" transform="translate(100.000000, 2995.000000)">
+                <g id="Locate-Us" transform="translate(3080.000000, 210.000000)">
+                    <g id="Wrapper" transform="translate(136.000000, 96.000000)">
+                        <g id="Locate-Us">
+                            <g id="Group" transform="translate(16.000000, 194.000000)">
+                                <g id="map1" transform="translate(436.000000, 0.000000)">
+                                    <g id="atm_location" transform="translate(254.000000, 236.000000)">
+                                        <g id="Group-3">
+                                            <g>
+                                                <g id="Oval">
+                                                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                                    <use fill="#0A162B" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                                </g>
+                                                <g id="Icons/T-icon" transform="translate(11.000000, 12.000000)">
+                                                    <g id="M-Logo">
+                                                        <path d="M4.12820513,1 L1,1 L1,18.7435897 L4.12820513,18.7435897 L4.12820513,1 Z" id="Rectangle" stroke="url(#linearGradient-3)" stroke-width="2"></path>
+                                                        <path d="M4.55373479,1 L1.61363402,1 L8.01036778,13.8717949 L10.9504685,13.8717949 L4.55373479,1 Z" id="Rectangle-Copy-4" stroke="url(#linearGradient-4)" stroke-width="2"></path>
+                                                        <path d="M19,1 L15.8717949,1 L15.8717949,18.7435897 L19,18.7435897 L19,1 Z" id="Rectangle" stroke="url(#linearGradient-5)" stroke-width="2" transform="translate(17.435897, 9.871795) scale(-1, 1) translate(-17.435897, -9.871795) "></path>
+                                                        <path d="M11.9896322,1 L9.04953145,1 L15.4462652,13.8717949 L18.386366,13.8717949 L11.9896322,1 Z" id="Rectangle-Copy-4" stroke="url(#linearGradient-6)" stroke-width="2" transform="translate(13.717949, 7.435897) scale(-1, 1) translate(-13.717949, -7.435897) "></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

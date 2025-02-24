@@ -1,0 +1,180 @@
+{
+  "standAlone": true,
+  "isStandalone": true,
+  "app": {
+    "appKey": "RB",
+    "initscr": "101",
+    "initser": "",
+    "language": "en",
+    "version": "7.2.1.0",    
+    "mx-ver": "7.4.4.0",
+    "baseUrl": "https://mrbqa1.tagitmobile.com",
+    "oauthUrl": "https://mrbqa1.tagitmobile.com/oauth",
+    "middleware": "mobeixadmin"
+  },
+  "errors": [
+    {
+      "code": 400,
+      "data": {
+        "message": "serverErrMsg.ServerError400",
+        "heading": "Server Error",
+        "popupType": "Info",
+        "errorDetails": []
+      },
+      "excludeErrors": ["USER_ALREADY_EXISTS"],
+      "messages": [
+        {
+          "key": "Invalid refresh token",
+          "data": {
+            "message": "serverErrMsg.ServerError400",
+            "heading": "Server Error",
+            "popupType": "Info",
+            "popupAction": "logout",
+            "errorDetails": []
+          }
+        }
+      ]
+    }
+  ],
+  "serverPagination": {
+    "pageSize": 10000
+  },
+  "timeout": {
+    "reqTimeout": 300000
+  },
+  "langCultureJson": [
+    {
+      "Code": "BND",
+      "Culture": "en"
+    },
+    {
+      "Code": "LAK",
+      "Culture": "en-IN"
+    },
+    {
+      "Code": "SGD",
+      "Culture": "en-SG"
+    },
+    {
+      "Code": "USD",
+      "Culture": "en"
+    },
+    {
+      "Code": "INR",
+      "Culture": "en-IN"
+    },
+    {
+      "Code": "PHP",
+      "Culture": "en-PH"
+    },
+    {
+      "Code": "HKD",
+      "Culture": "en-HK"
+    }
+  ],
+  "merchantConfig": {
+    "appId": "2",
+    "appImage": "TesT",
+    "appKeyword": "SY",
+    "appName": "QATEST",
+    "contactAddress": "admin",
+    "contactEmail": "mxserver@tagitmobile.com",
+    "contactName": "Admin",
+    "contactPhone": "8765439870",
+    "country": 1,
+    "countryDescription": null,
+    "createdBy": "Thilaga",
+    "createdDate": "2020-10-05T13:41:41Z",
+    "description": "QA Test App",
+    "lastAction": "UPDATE",
+    "modifiedBy": "Gokul",
+    "modifiedDate": "2020-10-27T12:41:37Z",
+    "tenantId": "SY",
+    "version": 3,
+    "mode": "maker",
+    "username": "maker",
+    "language": "en"
+  },
+  "googleMapConfig": {
+    "scriptURL": "https://maps.googleapis.com/maps/api/js?libraries=places&key=",
+    "apiKey": "AIzaSyAiHtcdWrf_6jK-9k7SREqqFczhR-XPIwg",
+    "center": {
+      "lat": 12.9057823655856,
+      "lng": 80.22665798664094
+    },
+    "zoom": 15,
+    "mapTypeId": "roadmap",
+    "mapTypeControl": false,
+    "zoomControl": false,
+    "scrollwheel": false,
+    "streetViewControl": false,
+    "disableDoubleClickZoom": false,
+    "maxZoom": 20,
+    "minZoom": 0,
+    "displayedInDistance": "km"
+  },
+  "microAppConfig": {
+    "location-finder": [
+      {
+        "appName": "location-finder",
+        "containerId": "content",
+        "attributes": [
+          {
+            "name": "test",
+            "value": "https://pngimg.com/uploads/football/football_PNG28465.png"
+          }
+        ]
+      }
+    ],
+    "retail-admin": [
+      {
+        "appName": "retail-admin",
+        "containerId": "content",
+        "attributes": [
+          {
+            "name": "test",
+            "value": "https://pngimg.com/uploads/football/football_PNG28465.png"
+          }
+        ]
+      }
+    ],
+    "limits-management": [
+      {
+          "appName": "limits-management",
+          "containerId": "content",
+          "attributes": [
+              {
+                  "name": "test",
+                  "value": "https://pngimg.com/uploads/football/football_PNG28465.png"
+              }
+          ]
+      }
+  ]
+  },
+  "microAppInfo": {
+    "retail-admin": {
+      "path": "https://mrbqa1.tagitmobile.com/retail-admin/retail-admin_es2015_bundle.js",
+      "element": "app-retail-admin-root",
+      "microAppBaseUrl": "https://mrbqa1.tagitmobile.com/mrb-custadm-admin/web",
+      "middleware": "mrb-custadm-admin/api",
+      "languageURL": "https://mrbqa1.tagitmobile.com/mrb-custadm-admin/web",
+      "moduleName": "retailadmin"
+    },
+    "location-finder": {
+      "path": "https://mrbqa1.tagitmobile.com/location-finder/location-finder_es2015_bundle.js",
+      "element": "app-location-finder-root",
+      "microAppBaseUrl": "https://mrbqa1.tagitmobile.com/dblf-adm/web",
+      "middleware": "dblf-adm/api",
+      "languageURL": "https://mrbqa1.tagitmobile.com/dblf-adm/web",
+      "moduleName": "locationfinder"
+    },
+    "limits-management": {
+      "path": "https://mrbqa1.tagitmobile.com/dblm-adm/limits-management_es2015_bundle.js",
+      "element": "app-limits-management-root",
+      "microAppBaseUrl": "https://mrbqa1.tagitmobile.com/dblm-adm/web",
+      "middleware": "dblm-adm/api",
+      "languageURL": "https://mrbqa1.tagitmobile.com/dblm-adm/web",
+      "moduleName": "limitmanagement"
+  }
+  }
+}
