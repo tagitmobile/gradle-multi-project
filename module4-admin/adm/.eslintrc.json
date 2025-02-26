@@ -23,20 +23,22 @@
         "@angular-eslint/component-selector": [
           "error",
           {
-            "prefix": "app",
+            "prefix": "mx-ac",
             "style": "kebab-case",
             "type": "element"
           }
         ],
+        "anti-trojan-source/no-bidi": "error",
         "@angular-eslint/directive-selector": [
           "error",
           {
-            "prefix": "app",
+            "prefix": "mxAc",
             "style": "camelCase",
             "type": "attribute"
           }
         ]
-      }
+      },
+      "plugins": ["anti-trojan-source"]
     },
     {
       "files": [

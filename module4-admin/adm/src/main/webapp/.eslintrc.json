@@ -1,9 +1,7 @@
 {
-  "extends": [
-    "plugin:@angular-eslint/template/recommended"
-  ],
+  "extends": "../../../.eslintrc.json",
   "ignorePatterns": [
-    "projects/**/*"
+    "!**/*"
   ],
   "overrides": [
     {
@@ -23,7 +21,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": "mxAc",
             "style": "camelCase"
           }
         ],
@@ -31,7 +29,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "app",
+            "prefix": "mx-ac",
             "style": "kebab-case"
           }
         ]

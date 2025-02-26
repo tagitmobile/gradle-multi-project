@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>delete</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="paper-menu-maker" transform="translate(-28.000000, -72.000000)" fill="#2A2A2A" fill-rule="nonzero">
+            <g id="paper-menu-button">
+                <g transform="translate(28.000000, 70.000000)">
+                    <g id="archive-2" transform="translate(0.000000, 2.000000)">
+                        <g id="delete">
+                            <path d="M11.64,0.82 L11.64,2.5 L1.63424829e-13,2.5 L1.63424829e-13,0.82 L2.9,0.82 L3.76,0 L7.9,0 L8.76,0.82 L11.64,0.82 Z M0.82,13.32 L0.82,3.32 L10.82,3.32 L10.82,13.32 C10.82,13.7733356 10.653335,14.166665 10.32,14.5 C9.986665,14.833335 9.5933356,15 9.14,15 L2.5,15 C2.0466644,15 1.653335,14.833335 1.32,14.5 C0.986665,14.166665 0.82,13.7733356 0.82,13.32 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

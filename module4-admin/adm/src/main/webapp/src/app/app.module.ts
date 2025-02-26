@@ -1,113 +1,112 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, DoBootstrap, Injector, NgModule, NgZone } from '@angular/core';
+import { NgModule, DoBootstrap, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { createCustomElement } from '@angular/elements';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { DatePipe } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { AppService } from './core/modules/services/app.service';
 import { ViewService } from './core/modules/services/view.service';
-import { registerLocaleData, DatePipe } from '@angular/common';
-import localeIN from '@angular/common/locales/en-IN';
-import localeSG from '@angular/common/locales/en-SG';
-import { MxAdmPipesModule } from '@tagit/mx-admin-library/pipes';
-import { MxAdmAdvanceSearchModule } from '@tagit/mx-admin-library/mx-adm-advance-search';
-import { MxAdmTableModule } from '@tagit/mx-admin-library/mx-adm-table';
-import { MxAdmApiModule } from '@tagit/mx-admin-library/api';
-import { MxAdmSearchModule } from '@tagit/mx-admin-library/mx-adm-search';
-import { MxAdmCrudModule } from '@tagit/mx-admin-library/mx-adm-crud';
-import { MicroappService } from './core/modules/common/microapp.service';
-import { MxAdmConfigService } from '@tagit/mx-admin-library/api';
+import { LocaleService } from './core/modules/services/locale.service';
+import { createCustomElement } from '@angular/elements';
+import { ApiInterceptorService } from './core/modules/services/api.interceptor';
 
-registerLocaleData(localeIN);
-registerLocaleData(localeSG);
+import { MxAdmApiModule } from '@tagit/mx-admin-library/api';
+import { MxAdmPipesModule } from '@tagit/mx-admin-library/pipes';
+import { MxAdmTableModule } from '@tagit/mx-admin-library/mx-adm-table';
+import { MxAdmAdvanceSearchModule } from '@tagit/mx-admin-library/mx-adm-advance-search';
+import { MxAdmSearchModule } from '@tagit/mx-admin-library/mx-adm-search';
+import { MxAdmDirectivesModule } from '@tagit/mx-admin-library/directives';
+import { MxAdmCrudModule } from '@tagit/mx-admin-library/mx-adm-crud';
+
+import { MicroappService } from './core/modules/common/microapp.service';
+import { AppMessagesTableComponent } from './core/modules/messages/app-messages/app-messages-table/app-messages-table.component';
+import { BpmnComponent } from './bpmn/bpmn.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/translation/', '.json');
 }
-
-const servErr = 'Server Error';
 const errors = [
   {
     code: 400,
-    data: { message: 'SERVR_ERRMSG.SERVR_ERR400', heading: servErr, popupType: 'Info', errorDetails: [] },
+    data: { message: 'serverErrMsg.SERVERERROR400', heading: 'Server Error', popupType: 'Info', errorDetails: [] },
     excludeErrors: ['USER_ALREADY_EXISTS'],
     messages: [
       {
         key: 'Invalid refresh token',
         data: {
-          message: 'SERVR_ERRMSG.ServerError400', heading: servErr, popupType: 'Info', popupAction: 'logout',
+          message: 'serverErrMsg.SERVERERROR400', heading: 'Server Error', popupType: 'Info', popupAction: 'logout',
           errorDetails: []
         },
       }
     ]
   }
   ,
-  { code: 401, data: { message: 'SERVR_ERRMSG.SERVR_ERR401', heading: servErr, popupType: 'Info', errorDetails: [] } },
-  { code: 403, data: { message: 'SERVR_ERRMSG.SERVR_ERR403', heading: servErr, popupType: 'Info', errorDetails: [] } },
+  { code: 401, data: { message: 'serverErrMsg.SERVERERROR401', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
+  { code: 403, data: { message: 'serverErrMsg.SERVERERROR403', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
   {
     code: 404, data: {
-      message: 'SERVR_ERRMSG.SERVR_ERR404', heading: servErr, popupType: 'Info', errorDetails: []
+      message: 'serverErrMsg.SERVERERROR404', heading: 'Server Error', popupType: 'Info', errorDetails: []
     }
   },
-  { code: 405, data: { message: 'SERVR_ERRMSG.SERVR_ERR405', heading: servErr, popupType: 'Info', errorDetails: [] } },
-  { code: 406, data: { message: 'SERVR_ERRMSG.SERVR_ERR406', heading: servErr, popupType: 'Info', errorDetails: [] } },
-  { code: 408, data: { message: 'SERVR_ERRMSG.SERVR_ERR408', heading: servErr, popupType: 'Info', errorDetails: [] } },
-  { code: 409, data: { message: 'SERVR_ERRMSG.SERVR_ERR409', heading: servErr, popupType: 'Info', errorDetails: [] } },
-  { code: 415, data: { message: 'SERVR_ERRMSG.SERVR_ERR415', heading: servErr, popupType: 'Info', errorDetails: [] } },
-  { code: 422, data: { message: 'SERVR_ERRMSG.SERVR_ERR422', heading: servErr, popupType: 'Info', errorDetails: [] } },
-  { code: 500, data: { message: 'SERVR_ERRMSG.SERVR_ERR500', heading: servErr, popupType: 'Info', errorDetails: [] } },
-  { code: 503, data: { message: 'SERVR_ERRMSG.SERVR_ERR503', heading: servErr, popupType: 'Info', errorDetails: [] } },
+  { code: 405, data: { message: 'serverErrMsg.SERVERERROR405', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
+  { code: 406, data: { message: 'serverErrMsg.SERVERERROR406', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
+  { code: 408, data: { message: 'serverErrMsg.SERVERERROR408', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
+  { code: 409, data: { message: 'serverErrMsg.SERVERERROR409', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
+  { code: 415, data: { message: 'serverErrMsg.SERVERERROR415', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
+  { code: 422, data: { message: 'serverErrMsg.SERVERERROR422', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
+  { code: 500, data: { message: 'serverErrMsg.SERVERERROR500', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
+  { code: 503, data: { message: 'serverErrMsg.SERVERERROR503', heading: 'Server Error', popupType: 'Info', errorDetails: [] } },
 ];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppMessagesTableComponent,
+    BpmnComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule,
-    MxAdmPipesModule,
     MxAdmAdvanceSearchModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MxAdmPipesModule,
     TranslateModule.forRoot(),
     MxAdmApiModule.forRoot(),
+    MxAdmAdvanceSearchModule,
+    MxAdmPipesModule,
     MxAdmTableModule,
     MxAdmSearchModule,
-    MxAdmAdvanceSearchModule,
     MxAdmCrudModule,
-    MxAdmApiModule
-  ],
+    DragDropModule,
+    MxAdmDirectivesModule],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptorService, multi: true },
     MicroappService,
     AppService,
     ViewService,
-    DatePipe
+    LocaleService,
+    DatePipe,
+    provideHttpClient(withInterceptorsFromDi())
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [],
+  bootstrap: []
 })
 export class AppModule implements DoBootstrap {
-  constructor(private readonly injector: Injector, private readonly translate: TranslateService, private readonly ngZone: NgZone,
-    private readonly configService: MxAdmConfigService, private readonly microAppService: MicroappService) {
-    // this.configService.load().subscribe(() => {
-    //   this.microAppService.init();
-    // });
+  constructor(private injector: Injector,
+              ) {
   }
-
 
   ngDoBootstrap() {
     const el = createCustomElement(AppComponent, { injector: this.injector });
-    customElements.get('app-limit-management-root') || customElements.define('app-limit-management-root', el);
+    customElements.get('mx-ac-custom-admin12-root') || customElements.define('mx-ac-custom-admin12-root', el);
   }
-
 }

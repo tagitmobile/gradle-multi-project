@@ -1,0 +1,98 @@
+::ng-deep .light-theme
+{
+  .mx-table-link
+  {
+      text-decoration: none;
+      
+        height: 16px;
+        // // font-family: Roboto;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.14;
+        letter-spacing: normal;
+        text-align: left;
+        word-break: break-all !important;
+  }
+  .mat-toolbar {
+    height: 42px !important;
+}
+.statText {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+
+  .mx-status-Active, .mx-status-Approved  { 
+    @extend .statText;
+  }
+  .mx-status-Pending, .mx-status-Modified {
+    
+    @extend .statText;
+  }
+  .mx-status-Rejected {
+    
+    @extend .statText;
+  }
+} 
+::ng-deep .dark-theme 
+{
+  .mx-table-link
+  {
+      text-decoration: none;
+
+        height: 16px;
+        // // font-family: Roboto;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.14;
+        letter-spacing: normal;
+        text-align: left;
+        word-break: break-all !important;
+  }
+  .mat-toolbar {
+    height: 42px !important;
+  }
+  .statText {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  .mx-status-Active, .mx-status-Approved  { 
+    
+    @extend .statText;
+  }
+  .mx-status-Pending, .mx-status-Modified {
+    
+    @extend .statText;
+  }
+  .mx-status-Rejected {
+    
+    @extend .statText;
+  }
+}
+::ng-deep .light-theme .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .light-theme .mat-radio-button.mat-accent .mat-radio-inner-circle, .light-theme .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .light-theme .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background: #0058a5;
+}
+
+
+// ::ng-deep .light-theme .mat-sort-header-content {
+//   // // font-family: Roboto;
+//   font-size: 14px;
+//   font-weight: 500;
+//   text-align: left;
+
+// }
+
+::ng-deep .light-theme, ::ng-deep .dark-theme {
+  #custom-modal-1 {
+    .jw-modal {
+      overflow: unset !important;
+    }
+  }
+}

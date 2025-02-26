@@ -1,33 +1,64 @@
 {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "version": 1,
-    "newProjectRoot": "projects",
-    "projects": {
-      "mx-limit-management": {
-        "projectType": "application",
-        "schematics": {
-          "@schematics/angular:component": {
-            "style": "scss"
-          }
-        },
-        "root": "src/main/webapp",
-        "sourceRoot": "src/main/webapp/src",
-        "prefix": "app",
-        "architect": {
-          "build": {
-            "builder": "ngx-build-plus:browser",
-            "options": {
-              "outputPath": "dist/mx-limit-management",
-              "index": "src/main/webapp/src/index.html",
-              "main": "src/main/webapp/src/main.ts",
-              "tsConfig": "src/main/webapp/tsconfig.app.json",
-              "aot": true,
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "custom-admin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "src/main/webapp",
+      "sourceRoot": "src/main/webapp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/custom-admin",
+            "index": "src/main/webapp/src/index.html",
+            "main": "src/main/webapp/src/main.ts",
+            "polyfills": "src/main/webapp/src/polyfills.ts",
+            "tsConfig": "src/main/webapp/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "src/main/webapp/src/favicon.ico",
+              "src/main/webapp/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./config",
+                "output": "config/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./urls",
+                "output": "urls/"
+              }
+            ],
+            "styles": [
+              "src/main/webapp/src/assets/styles/style.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/"
+              ]
+            },
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/main/webapp/src/environments/environment.ts",
+                  "with": "src/main/webapp/src/environments/environment.prod.ts"
+                }
+              ],
               "assets": [
-                "src/main/webapp/src/favicon.ico",
-                "src/main/webapp/src/assets",
                 {
                   "glob": "**/*",
-                  "input": "src/main/webapp/config",
+                  "input": "./config/production",
                   "output": "config/"
                 },
                 {
@@ -36,231 +67,193 @@
                   "output": "urls/"
                 }
               ],
-              "styles": [
-                "src/main/webapp/src/assets/styles/style.scss"
+              "optimization": {
+                "styles": {
+                  "inlineCritical": false
+                }
+              },
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "100kb"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/main/webapp/src/environments/environment.ts",
+                  "with": "src/main/webapp/src/environments/environment.prod.ts"
+                }
               ],
-              "stylePreprocessorOptions": {
-                "includePaths": [
-                  "node_modules/"
-                ]
-              },
-              "scripts": []
-            },
-            "configurations": {
-              "production": {
-                "fileReplacements": [
-                  {
-                    "replace": "src/main/webapp/src/environments/environment.ts",
-                    "with": "src/main/webapp/src/environments/environment.prod.ts"
-                  }
-                ],
-                "assets": [
-                   "src/main/webapp/src/favicon.ico",
-                "src/main/webapp/src/assets",
-                  {
-                    "glob": "**/*",
-                    "input": "src/main/webapp/config/production",
-                    "output": "config/"
-                  },
-                  {
-                    "glob": "**/*",
-                    "input": "./urls",
-                    "output": "urls/"
-                  }
-                ],
-                "optimization": {
-                  "styles": {
-                    "inlineCritical": false
-                  }
-                },
-                "outputHashing": "all",
-                "sourceMap": false,
-                "namedChunks": false,
-                "extractLicenses": true,
-                "vendorChunk": false,
-                "buildOptimizer": true,
-                "budgets": [
-                  {
-                    "type": "initial",
-                    "maximumWarning": "2mb",
-                    "maximumError": "5mb"
-                  },
-                  {
-                    "type": "anyComponentStyle",
-                    "maximumWarning": "6kb",
-                    "maximumError": "200kb"
-                  }
-                ]
-              },
-              "staging": {
-                "fileReplacements": [
-                  {
-                    "replace": "src/main/webapp/src/environments/environment.ts",
-                    "with": "src/main/webapp/src/environments/environment.prod.ts"
-                  }
-                ],
-                "assets": [
-                  "src/main/webapp/src/favicon.ico",
-                  "src/main/webapp/src/assets",
-                  {
-                    "glob": "**/*",
-                    "input": "src/main/webapp/config/staging",
-                    "output": "config/"
-                  },
-                  {
-                    "glob": "**/*",
-                    "input": "./urls",
-                    "output": "urls/"
-                  }
-                ],
-                "optimization": {
-                  "styles": {
-                    "inlineCritical": false
-                  }
-                },
-                "outputHashing": "all",
-                "sourceMap": false,
-                "namedChunks": false,
-                "extractLicenses": true,
-                "vendorChunk": false,
-                "buildOptimizer": true,
-                "budgets": [
-                  {
-                    "type": "initial",
-                    "maximumWarning": "2mb",
-                    "maximumError": "5mb"
-                  },
-                  {
-                    "type": "anyComponentStyle",
-                    "maximumWarning": "6kb",
-                    "maximumError": "200kb"
-                  }
-                ]
-              },
-              "development": {
-                "fileReplacements": [
-                  {
-                    "replace": "src/main/webapp/src/environments/environment.ts",
-                    "with": "src/main/webapp/src/environments/environment.prod.ts"
-                  }
-                ],
-                "assets": [
-                  "src/main/webapp/src/favicon.ico",
-                  "src/main/webapp/src/assets",
-                  {
-                    "glob": "**/*",
-                    "input": "./config/development",
-                    "output": "config/"
-                  },
-                  {
-                    "glob": "**/*",
-                    "input": "./urls",
-                    "output": "urls/"
-                  }
-                ],
-                "optimization": false,
-                "sourceMap": true,
-                "namedChunks": true,
-                "extractLicenses": false,
-                "vendorChunk": true,
-                "buildOptimizer": false,
-                "budgets": [
-                  {
-                    "type": "initial",
-                    "maximumWarning": "2mb",
-                    "maximumError": "5mb"
-                  },
-                  {
-                    "type": "anyComponentStyle",
-                    "maximumWarning": "6kb",
-                    "maximumError": "200kb"
-                  }
-                ]
-              }
-            },
-            "defaultConfiguration": "development"
-          },
-          "serve": {
-            "builder": "ngx-build-plus:dev-server",
-            "options": {
-              "buildTarget": "mx-limit-management:build"
-            },
-            "configurations": {
-              "production": {
-                "buildTarget": "mx-limit-management:build:production"
-              },
-              "staging": {
-                "buildTarget": "mx-limit-management:build:staging"
-              },
-              "development": {
-                "buildTarget": "mx-limit-management:build:development"
-              }
-            }
-          },
-          "extract-i18n": {
-            "builder": "@angular-devkit/build-angular:extract-i18n",
-            "options": {
-              "buildTarget": "mx-limit-management:build"
-            }
-          },
-          "test": {
-            "builder": "ngx-build-plus:karma",
-            "options": {
-              "main": "src/main/webapp/src/test.ts",
-              "polyfills": "src/main/webapp/src/polyfills.ts",
-              "tsConfig": "src/main/webapp/tsconfig.spec.json",
-              "karmaConfig": "src/main/webapp/karma.conf.js",
               "assets": [
-                "src/main/webapp/src/favicon.ico",
-                "src/main/webapp/src/assets"
+                {
+                  "glob": "**/*",
+                  "input": "./config/staging",
+                  "output": "config/"
+                },
+                {
+                  "glob": "**/*",
+                  "input": "./urls",
+                  "output": "urls/"
+                }
               ],
-              "styles": [
-                "src/main/webapp/src/styles.scss"
+              "optimization": {
+                "styles": {
+                  "inlineCritical": false
+                }
+              },
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "100kb"
+                }
+              ]
+            },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/main/webapp/src/environments/environment.ts",
+                  "with": "src/main/webapp/src/environments/environment.prod.ts"
+                }
               ],
-              "scripts": []
-            }
-          },
-          "lint": {
-            "builder": "@angular-eslint/builder:lint",
-            "options": {
-              "lintFilePatterns": [
-                "src/main/webapp/**/*.ts",
-                "src/main/webapp/**/*.html"
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "./config/development",
+                  "output": "config/"
+                },
+                {
+                  "glob": "**/*",
+                  "input": "./urls",
+                  "output": "urls/"
+                }
+              ],
+              "optimization": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "100kb"
+                }
               ]
             }
           },
-          "e2e": {
-            "builder": "@angular-devkit/build-angular:protractor",
-            "options": {
-              "protractorConfig": "src/main/webapp/e2e/protractor.conf.js",
-              "devServerTarget": "mx-limit-management:serve"
+          "defaultConfiguration": "development"
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "buildTarget": "custom-admin:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "custom-admin:build:production"
             },
-            "configurations": {
-              "production": {
-                "devServerTarget": "mx-limit-management:serve:production"
-              },
-              "staging": {
-                "devServerTarget": "mx-limit-management:serve:staging"
-              },
-              "development": {
-                "devServerTarget": "mx-limit-management:serve:development"
-              }
+            "staging": {
+              "buildTarget": "custom-admin:build:staging"
+            },
+            "development": {
+              "buildTarget": "custom-admin:build:development"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "custom-admin:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "src/main/webapp/src/test.ts",
+            "polyfills": "src/main/webapp/src/polyfills.ts",
+            "tsConfig": "src/main/webapp/tsconfig.spec.json",
+            "karmaConfig": "src/main/webapp/karma.conf.js",
+            "assets": [
+              "src/main/webapp/src/favicon.ico",
+              "src/main/webapp/src/assets"
+            ],
+            "styles": [
+              "src/main/webapp/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/main/webapp/**/*.ts",
+              "src/main/webapp/**/*.html"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "src/main/webapp/e2e/protractor.conf.js",
+            "devServerTarget": "custom-admin:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "custom-admin:serve:production"
+            },
+            "staging": {
+              "devServerTarget": "custom-admin:serve:staging"
+            },
+            "development": {
+              "devServerTarget": "custom-admin:serve:development"
             }
           }
         }
       }
-    },
-    "cli": {
-      "analytics": "9436964a-ecdc-498c-87ab-6d9db599b900",
-      "cache": {
-        "enabled": false,
-        "path": ".cache",
-        "environment": "all"
-      },
-      "schematicCollections": [
-        "@angular-eslint/schematics"
-      ]
     }
+  },
+  "cli": {
+    "analytics": "9436964a-ecdc-498c-87ab-6d9db599b900",
+    "cache": {
+      "enabled": false,
+      "path": ".cache",
+      "environment": "all"
+    },
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
-  
-
+}

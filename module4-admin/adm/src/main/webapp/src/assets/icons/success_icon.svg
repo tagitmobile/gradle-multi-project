@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="74px" height="74px" viewBox="0 0 74 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>success_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Create-User" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Create-User-Success" transform="translate(-683.000000, -235.000000)">
+            <g id="Popup">
+                <g transform="translate(520.000000, 200.000000)" id="success_icon">
+                    <g transform="translate(164.000000, 36.000000)">
+                        <g id="Success">
+                            <circle id="Oval" stroke="#7DD287" stroke-width="2" cx="36" cy="36" r="36"></circle>
+                            <path d="M53.1728527,19.5624675 L28.6652864,47.6935288 L18.7872647,36.2308265 C18.134233,35.5247065 17.116598,35.5455419 16.4854386,36.2779549 C15.8542793,37.0103679 15.8363243,38.191257 16.4448256,38.9490512 L27.4940668,51.7708659 C28.1411491,52.5208225 29.1894236,52.5208225 29.8365059,51.7708659 L55.5152918,22.2806922 C56.1615694,21.5298017 56.1615694,20.3133579 55.5152918,19.5624675 C54.8682095,18.8125108 53.819935,18.8125108 53.1728527,19.5624675 Z" id="Shape" fill="#7DD287"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
