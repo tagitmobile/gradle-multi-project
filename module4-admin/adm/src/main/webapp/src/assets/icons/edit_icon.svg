@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>edit_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="paper-menu" transform="translate(-25.000000, -24.000000)" fill="#2A2A2A" fill-rule="nonzero">
+            <g id="paper-menu-button">
+                <g transform="translate(25.000000, 21.000000)">
+                    <g id="edit_icon" transform="translate(0.000000, 3.000000)">
+                        <path d="M17.712,4.032 L15.888,5.856 L12.144,2.112 L13.968,0.288 C14.160001,0.09599904 14.3959986,0 14.676,0 C14.9560014,0 15.191999,0.09599904 15.384,0.288 L17.712,2.616 C17.904001,2.80800096 18,3.0439986 18,3.324 C18,3.6040014 17.904001,3.83999904 17.712,4.032 Z M0,14.256 L11.064,3.192 L14.808,6.936 L3.744,18 L0,18 L0,14.256 Z" id=""></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

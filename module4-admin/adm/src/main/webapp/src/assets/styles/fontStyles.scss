@@ -1,0 +1,444 @@
+@font-face {
+    // font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?n440q1');
+    src: url('../fonts/icomoon.eot?n440q1#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?n440q1') format('truetype'), url('../fonts/icomoon.woff?n440q1') format('woff'), url('../fonts/icomoon.svg?n440q1#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    // font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pay_cut-off_config_icon:before {
+    content: "\e95d";
+}
+
+.icon-manage_merchant_icon:before {
+    content: "\e95e";
+}
+
+.icon-merchant_management_icon:before {
+    content: "\e95f";
+}
+
+.icon-payment_cutoff_icon:before {
+    content: "\e960";
+}
+
+.icon-payment_type_config_icon:before {
+    content: "\e961";
+}
+
+.icon-clear_icon:before {
+    content: "\e962";
+}
+
+.icon-download_icon:before {
+    content: "\e963";
+}
+
+.icon-workflow_icon:before {
+    content: "\e94f";
+}
+
+.icon-account_activation_icon:before {
+    content: "\e950";
+}
+
+.icon-activate_icon:before {
+    content: "\e951";
+}
+
+.icon-customer_management_icon:before {
+    content: "\e952";
+}
+
+.icon-info_icon:before {
+    content: "\e953";
+}
+
+.icon-location_finder_ic:before {
+    content: "\e954";
+}
+
+.icon-reject_icon:before {
+    content: "\e955";
+}
+
+.icon-reset_icon:before {
+    content: "\e956";
+}
+
+.icon-retail_admin_icon:before {
+    content: "\e957";
+}
+
+.icon-success_icon:before {
+    content: "\e958";
+}
+
+.icon-suspend_icon:before {
+    content: "\e959";
+}
+
+.icon-transaction_management_icon:before {
+    content: "\e95a";
+}
+
+.icon-upload_icon:before {
+    content: "\e95b";
+}
+
+.icon-upload_info_icon:before {
+    content: "\e95c";
+}
+
+.icon-con_mobilebinaries:before {
+    content: "\e94e";
+}
+
+.icon-applp_home:before {
+    content: "\e94d";
+}
+
+.icon-sys_uiparameters:before {
+    content: "\e900";
+}
+
+.icon-sys_businessrules:before {
+    content: "\e901";
+}
+
+.icon-sys_cacheflush:before {
+    content: "\e902";
+}
+
+.icon-sys_globalrules:before {
+    content: "\e903";
+}
+
+.icon-sys_iptables:before {
+    content: "\e904";
+}
+
+.icon-sys_profile:before {
+    content: "\e905";
+}
+
+.icon-sec_users:before {
+    content: "\e906";
+}
+
+.icon-sec_auditreport:before {
+    content: "\e907";
+}
+
+.icon-sec_keystores:before {
+    content: "\e908";
+}
+
+.icon-sec_menu:before {
+    content: "\e909";
+}
+
+.icon-sec_permissions:before {
+    content: "\e90a";
+}
+
+.icon-sys_businessrules1:before {
+    content: "\e90b";
+}
+
+.icon-con_apprules:before {
+    content: "\e90c";
+}
+
+.icon-con_mobilerules:before {
+    content: "\e90d";
+}
+
+.icon-con_mwebrules:before {
+    content: "\e90e";
+}
+
+.icon-con_otarules:before {
+    content: "\e90f";
+}
+
+.icon-servicesummary_update:before {
+    content: "\e910";
+    color: #0059a6;
+}
+
+.icon-servicesummary_logout:before {
+    content: "\e911";
+    color: #0059a6;
+}
+
+.icon-servicesummary_service:before {
+    content: "\e912";
+    color: #0059a6;
+}
+
+.icon-concurrentuser_users:before {
+    content: "\e913";
+    color: #0059a6;
+}
+
+.icon-concurrentuser_mobileweb:before {
+    content: "\e914";
+    color: #0058a5;
+}
+
+.icon-concurrentuser_platform:before {
+    content: "\e915";
+    color: #0058a5;
+}
+
+.icon-usersummary_Rweb:before {
+    content: "\e916";
+    color: #0058a5;
+}
+
+.icon-usersummary_mobileapp:before {
+    content: "\e917";
+    color: #0058a5;
+}
+
+.icon-usersummary_mobileweb:before {
+    content: "\e918";
+    color: #0058a5;
+}
+
+.icon-appsummary_download:before {
+    content: "\e919";
+    color: #0059a6;
+}
+
+.icon-appsummary_android:before {
+    content: "\e91a";
+    color: #0059a6;
+}
+
+.icon-appsummary_apple:before {
+    content: "\e91b";
+    color: #0059a6;
+}
+
+.icon-transsummary_trans:before {
+    content: "\e91c";
+    color: #0059a6;
+}
+
+.icon-transactions:before {
+    content: "\e91d";
+    color: #0059a6;
+}
+
+.icon-transsummary_dollar:before {
+    content: "\e91e";
+    color: #0059a6;
+}
+
+.icon-rep_users:before {
+    content: "\e91f";
+}
+
+.icon-rep_appsummary:before {
+    content: "\e920";
+}
+
+.icon-rep_devices:before {
+    content: "\e921";
+}
+
+.icon-rep_jobexecution:before {
+    content: "\e922";
+}
+
+.icon-rep_services:before {
+    content: "\e923";
+}
+
+.icon-rep_transaction:before {
+    content: "\e924";
+}
+
+.icon-rep_userdefined:before {
+    content: "\e925";
+}
+
+.icon-sys_profile1:before {
+    content: "\e926";
+}
+
+.icon-pc__system:before {
+    content: "\e927";
+}
+
+.icon-pc_security:before {
+    content: "\e928";
+}
+
+.icon-sys_analytics:before {
+    content: "\e929";
+}
+
+.icon-sys_iam:before {
+    content: "\e92a";
+}
+
+.icon-con_sysmessages:before {
+    content: "\e92b";
+}
+
+.icon-con_appmessages:before {
+    content: "\e92c";
+}
+
+.icon-con_reportcodes:before {
+    content: "\e92d";
+}
+
+.icon-lp_platformconfigurations:before {
+    content: "\e92e";
+}
+
+.icon-lp_applications:before {
+    content: "\e92f";
+}
+
+.icon-con_workflow:before {
+    content: "\e930";
+}
+
+.icon-con_deeplinking:before {
+    content: "\e931";
+}
+
+.icon-con_servicegroup .path1:before {
+    content: "\e932";
+    color: rgb(33, 33, 33);
+}
+
+.icon-con_servicegroup .path2:before {
+    content: "\e933";
+    margin-left: -0.98046875em;
+    color: rgb(0, 0, 0);
+}
+
+.icon-con_servicegroup .path3:before {
+    content: "\e934";
+    margin-left: -0.98046875em;
+    color: rgb(0, 0, 0);
+}
+
+.icon-report:before {
+    content: "\e935";
+}
+
+.icon-app_appdesigner:before {
+    content: "\e936";
+}
+
+.icon-app_dashboard:before {
+    content: "\e937";
+}
+
+.icon-configure:before {
+    content: "\e938";
+}
+
+.icon-sec_users1:before {
+    content: "\e939";
+}
+
+.icon-sec_menu1:before {
+    content: "\e93a";
+}
+
+.icon-sec_permissions1:before {
+    content: "\e93b";
+}
+
+.icon-sec_profile:before {
+    content: "\e93c";
+}
+
+.icon-sec_program:before {
+    content: "\e93d";
+}
+
+.icon-sec_userprofile:before {
+    content: "\e93e";
+}
+
+.icon-norecordsfound:before {
+    content: "\e93f";
+    color: #f00;
+}
+
+.icon-con_reportcodepermissions:before {
+    content: "\e940";
+}
+
+.icon-con_automailer:before {
+    content: "\e941";
+}
+
+.icon-con_configurationfile:before {
+    content: "\e942";
+}
+
+.icon-con_language:before {
+    content: "\e943";
+}
+
+.icon-scheduletask:before {
+    content: "\e944";
+}
+
+.icon-app_integration:before {
+    content: "\e945";
+}
+
+.icon-con_messages:before {
+    content: "\e946";
+}
+
+.icon-con_rules:before {
+    content: "\e947";
+}
+
+.icon-configure1:before {
+    content: "\e948";
+}
+
+.icon-imgprocess:before {
+    content: "\e949";
+}
+
+.icon-notification:before {
+    content: "\e94a";
+}
+
+.icon-report1:before {
+    content: "\e94b";
+}
+
+.icon-sec_analyticsusers:before {
+    content: "\e94c";
+}

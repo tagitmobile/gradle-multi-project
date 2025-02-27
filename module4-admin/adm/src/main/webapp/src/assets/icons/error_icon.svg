@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>error</title>
+    <desc>Created with Sketch.</desc>
+    <g id="03_Login&amp;Registration_BR7_Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03_Login" transform="translate(-664.000000, -292.000000)" fill="#D0021B">
+            <g id="1" transform="translate(473.000000, 251.000000)">
+                <g transform="translate(150.000000, 0.000000)" id="error">
+                    <g transform="translate(60.000000, 60.000000) rotate(45.000000) translate(-60.000000, -60.000000) translate(35.000000, 35.000000)">
+                        <rect id="Rectangle" x="0" y="23" width="50" height="4" rx="2"></rect>
+                        <rect id="Rectangle" transform="translate(25.000000, 25.000000) rotate(90.000000) translate(-25.000000, -25.000000) " x="0" y="23" width="50" height="4" rx="2"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

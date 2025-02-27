@@ -1,0 +1,37 @@
+const webpack = require('webpack');
+module.exports = {
+    "externals": {
+        "@angular/core": "ng.core",
+        "@angular/common": "ng.common",
+        "@angular/common/http": "ng.http",
+        "@angular/compiler":"ng.compiler",
+        "@angular/elements": "ng.elements",
+        "@angular/platform-browser": "ng.platformBrowser",
+        "rxjs": "rxjs",
+        "rxjs/operators": "ng.rxjsoperator",
+        "@ngx-translate/core": 'ng.translatecore',
+        '@tagit/mx-admin-library/models': "mxadminlibrary.models",
+        '@tagit/mx-admin-library/api': "mxadminlibrary.api",
+        '@tagit/mx-admin-library': "mxadminlibrary.mxadminlibrary",
+        '@tagit/mx-admin-library/mx-adm-bg-header': "mxadminlibrary.mxadmbgheader",
+        '@tagit/mx-admin-library/mx-adm-breadcrumb': "mxadminlibrary.mxadmbreadcrumb",
+        '@tagit/mx-admin-library/mx-adm-overlay': "mxadminlibrary.mxadmoverlay",
+        '@tagit/mx-admin-library/mx-adm-crud': "mxadminlibrary.mxadmcrud",
+        '@tagit/mx-admin-library/mx-adm-footer': "mxadminlibrary.mxadmfooter",
+        '@tagit/mx-admin-library/mx-adm-header': "mxadminlibrary.mxadmheader",
+        '@tagit/mx-admin-library/mx-adm-paper': "mxadminlibrary.mxadmpaper",
+        '@tagit/mx-admin-library/mx-adm-advance-search': "mxadminlibrary.mxadmadvancesearch",
+        '@tagit/mx-admin-library/mx-adm-search': "mxadminlibrary.mxadmsearch",
+        '@tagit/mx-admin-library/mx-adm-select-autocomplete': "mxadminlibrary.mxadmselectautocomplete",
+        '@tagit/mx-admin-library/animations': "mxadminlibrary.animations",
+        '@tagit/mx-admin-library/mx-adm-sidenav': "mxadminlibrary.mxadmsidenav",
+        '@tagit/mx-admin-library/pipes': "mxadminlibrary.pipes",
+        '@tagit/mx-admin-library/directives': "mxadminlibrary.directives",
+        '@tagit/mx-admin-library/mx-adm-table': "mxadminlibrary.mxadmtable",
+        '@tagit/mx-admin-library/mx-adm-theme': "mxadminlibrary.mxadmtheme"
+    },
+    output: {
+        chunkLoadingGlobal: 'customAdmin',
+        // library: 'product',
+    },
+}

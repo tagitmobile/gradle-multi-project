@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>up_arrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Workflow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Workflow_View-User" transform="translate(-1346.000000, -217.000000)">
+            <g id="View-User" transform="translate(48.000000, 186.000000)">
+                <g id="Personal-Information">
+                    <g id="Title">
+                        <g id="up_arrow" transform="translate(1294.000000, 24.000000)">
+                            <g>
+                                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                                <g transform="translate(4.000000, 7.000000)" fill="#000000" fill-rule="nonzero" id="">
+                                    <polygon points="1.888 9.888 0 8 8 -1.15463195e-14 16 8 14.112 9.888 8 3.744"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%d{dd:MM:yyyy HH:mm:ss.SSS}] [%level][%X{userId}-%X{correlationId}][%logger{36}] - %msg%n" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<!-- Spring Framework -->
+		<Logger name="org.springframework" level="INFO" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<Logger name="org.springframework.beans" level="DEBUG" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<Logger name="org.springframework.context" level="DEBUG" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<Logger name="springfox.documentation" level="INFO" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<!-- Hibernate ORM -->
+		<Logger name="org.hibernate" level="INFO" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<Logger name="org.hibernate.id" level="DEBUG" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<Logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<Logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<!-- Utilities -->
+		<Logger name="ma.glasnost.orika" level="INFO" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<Logger name="org.flywaydb" level="INFO" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<!-- Tagit -->
+		<Logger name="com.tagit" level="DEBUG" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="FileAppender" /> -->
+		</Logger>
+		<Root level="DEBUG">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- Sync Logging Appender <AppenderRef ref="Console"/> -->
+		</Root>
+	</Loggers>
+</Configuration>

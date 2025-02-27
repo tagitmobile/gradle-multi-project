@@ -1,0 +1,22 @@
+<mx-adm-crud>
+  <mx-adm-crud-header class="mx-ac-crud-sticky-header-container" mxAdmHeaderSticky>
+    <div gdColumns.gt-sm="75% auto" gdGap.gt-sm="0px" gdGap="1rem" gdRows>
+      <mx-adm-search (inputChange)="onInput($event)" [advSearchConfig]="advSearchConfig" [debounceTime]="1500">
+      </mx-adm-search>
+      <div gdColumns gdAuto="column" gdAlignRows.gt-sm="end" gdAlignRows="start" gdGap="1rem" gdAlignColumns="center">
+        <button mat-mini-fab class="mx-ac-add-btn mx-fab-btn download-button"
+          [attr.aria-label]="'MX_AC_APP_MESSAGES.APP_MSG_APPMSG_EXPORT' | translate"
+          [matTooltip]="'MX_AC_APP_MESSAGES.APP_MSG_APPMSG_EXPORT' | translate" (click)="onDownload()">
+          <img alt="download image" mxAdmImage [microAppName]="'custom-admin'" [imageName]="'download.png'" >
+        </button>
+        <button mat-raised-button type="button"  (click)="callErrorAPI()" class="mx-ac-font-downloadtable mx-primary-btn">{{"MX_AC_COMMON.COMMON_DOWNLOAD_AS_TABLE" | translate}}</button>
+      </div>
+    </div>
+  </mx-adm-crud-header>
+  <div *ngIf="tableData" class="mx-ac-datatable-container">
+    <mx-adm-table [ngClass.lt-md]="'sm-resp-table'" [data]="tableData" [userTypeMode]="userTypeMode$" [permissions]="permissions$" [headers]="headers"
+      [searchTerm]="filterValue" [pageConfig]="pageConfig" [clientSide]="false" (pageChange)=OnPageChange($event)
+      [totalRecords]="count">
+    </mx-adm-table>
+  </div>
+</mx-adm-crud>

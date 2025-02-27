@@ -1,0 +1,15 @@
+{
+    "modules": [{
+        "name": "locationInformation",
+        "url": "locations",
+        "urls": [{
+                "name": "findLocations",
+                "url": "findLocations"
+            },
+            {
+                "name": "viewLocation",
+                "url": "viewLocations"
+            }
+        ]
+    }]
+}
