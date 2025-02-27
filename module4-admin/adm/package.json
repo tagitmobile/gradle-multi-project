@@ -39,7 +39,7 @@
     "@ngx-translate/core": "16.0.4",
     "@ngx-translate/http-loader": "16.0.1",
     "@swimlane/ngx-charts": "21.1.0",
-    "@tagit/mx-admin-library": "https://nexus.tagitmobile.com/repository/npm-public/@tagit/mx-admin-library/-/mx-admin-library-7.5.3.tgz",
+    "@tagit/mx-admin-library": "https://nexus.tagitmobile.com/repository/npm-releases/@tagit/mx-admin-library/-/mx-admin-library-7.5.3.tgz",
     "@webcomponents/webcomponentsjs": "2.8.0",
     "bpmn-js": "18.1.1",
     "document-register-element": "1.14.10",
