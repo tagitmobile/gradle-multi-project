@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Spring boot 2.0 war deployment error on jboss EAP 7 java.lang.VerifyError: Failed to link com/fasterxml/jackson/databind/type/ReferenceType: https://cloudjava.net/2018/08/27/29/ -->
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+    <deployment>
+        <exclude-subsystems>
+			<!-- Fix for No validator could be found for constraint 'javax.validation.constraints.NotBlank'  -->
+            <subsystem name="jsf"></subsystem>
+        </exclude-subsystems>
+		<exclusions>
+			<module name="com.fasterxml.jackson.core.jackson-annotations" />
+			<module name="com.fasterxml.jackson.core.jackson-core" />
+			<module name="com.fasterxml.jackson.core.jackson-databind" />
+			<module name="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" />
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="org.slf4j" />
+			<!-- Fix for No validator could be found for constraint 'javax.validation.constraints.NotBlank'  -->
+            <module name="javax.validation.api" />
+			<module name="javax.faces.api" />
+			<module name="org.hibernate.validator" />
+			<!--  Fix for ClassCastException: com.fasterxml.jackson.datatype.jdk8.Jdk8Module cannot be cast to com.fasterxml.jackson.databind.Module in JBoss 7.1 -->
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+		</exclusions>
+	</deployment>
+</jboss-deployment-structure>

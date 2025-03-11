@@ -1,0 +1,115 @@
+{
+    "standAlone": true,
+    "app": {
+        "appKey": "RB",
+        "initscr": "101",
+        "initser": "",
+        "language": "hi",
+        "version": "7.0.0.0",
+        "baseUrl": "https://mxdev.tagitmobile.com",
+        "oauthUrl": "https://mxdev.tagitmobile.com",
+        "middleware": "mobeixadmin"
+    },
+    "serverPagination": {
+        "pageSize": 10000
+    },
+    "timeout": {
+        "reqTimeout": 300000
+    },
+    "langCultureJson": [
+        {
+            "Code": "BND",
+            "Culture": "en"
+        },
+        {
+            "Code": "LAK",
+            "Culture": "en-IN"
+        },
+        {
+            "Code": "SGD",
+            "Culture": "en-SG"
+        },
+        {
+            "Code": "USD",
+            "Culture": "en"
+        },
+        {
+            "Code": "INR",
+            "Culture": "en-IN"
+        },
+        {
+            "Code": "PHP",
+            "Culture": "en-PH"
+        },
+        {
+            "Code": "HKD",
+            "Culture": "en-HK"
+        }
+    ],
+    "merchantConfig": {
+        "appId": 2,
+        "appImage": "TesT",
+        "appKeyword": "SY",
+        "appName": "QATEST",
+        "contactAddress": "admin",
+        "contactEmail": "mxserver@tagitmobile.com",
+        "contactName": "Admin",
+        "contactPhone": "8765439870",
+        "country": 1,
+        "countryDescription": null,
+        "createdBy": "Thilaga",
+        "createdDate": "2020-10-05T13:41:41Z",
+        "description": "QA Test App",
+        "lastAction": "UPDATE",
+        "modifiedBy": "Gokul",
+        "modifiedDate": "2020-10-27T12:41:37Z",
+        "tenantId": "SY",
+        "version": 3,
+        "mode": "maker",
+        "username": "maker",
+        "language": "en"
+    },
+    "googleMapConfig": {
+        "scriptURL": "https://maps.googleapis.com/maps/api/js?libraries=places&key=",
+        "apiKey": "AIzaSyAiHtcdWrf_6jK-9k7SREqqFczhR-XPIwg",
+        "center": {
+            "lat": 12.9057823655856,
+            "lng": 80.22665798664094
+        },
+        "zoom": 15,
+        "mapTypeId": "roadmap",
+        "mapTypeControl": false,
+        "zoomControl": false,
+        "scrollwheel": false,
+        "streetViewControl": false,
+        "disableDoubleClickZoom": false,
+        "maxZoom": 20,
+        "minZoom": 0,
+        "displayedInDistance": "km"
+    },
+    "microAppConfig": {
+        "custom-admin": [
+            {
+                "appName": "custom-admin",
+                "containerId": "content",
+                "attributes": [
+                    {
+                        "name": "test-attribute-name",
+                        "value": "test-attribute-value"
+                    }
+                ]
+            }
+        ]
+    },
+    "microAppInfo": {
+         "custom-admin": {
+            "path": "http://localhost:80/custom-admin/custom-admin_es2015_bundle.js",
+            "element": "mx-ac-custom-admin12-root",
+            "microAppBaseUrl": "http://localhost:80/custom-admin/",
+            "middleware": "mobeixadmin",
+            "moduleName": "mxadmin",
+            "preload": true,
+            "imagePath": "./microapps/custom-admin/assets/images"
+        }
+    }
+}

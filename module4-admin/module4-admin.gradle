@@ -1,0 +1,7 @@
+description = 'Project Module 3 with Spring Boot API sub-module'
+
+dependencies {
+	
+}
+
+defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

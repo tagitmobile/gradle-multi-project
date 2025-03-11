@@ -1,0 +1,47 @@
+@use '@angular/material' as mat;
+
+@use "../../../../../../node_modules/@tagit/mx-admin-library/styles/palettes/admin/palette";
+// @import "~mx-admin-library/styles/palettes/editor/light.palette";
+// @import "~mx-admin-library/styles/palettes/editor/dark.palette";
+@use "../../../../../../node_modules/@tagit/mx-admin-library/styles/theming";
+// @import './mx-core-theme.scss';
+
+@include theming.mx-adm-material-core();
+
+// instead of creating a theme with mat-light-theme like a sane person, we will create our own theme-creating function that lets us apply our own foreground and background palettes.
+@function mx-admin-theme($indigo-palette, $pink-palette, $red-palette, $foreground, $background, $isDark: false) {
+  @return (primary: mat.$m2-indigo-palette,
+    accent: $pink-palette,
+    warn: $red-palette,
+    is-dark: $isDark,
+    foreground: $foreground,
+    background: $background);
+}
+
+
+
+.dark-theme {
+  $custom-theme-primary: mat.m2-define-palette(mat.$m2-indigo-palette);
+  $custom-theme-accent: mat.m2-define-palette(mat.$m2-pink-palette);
+  $custom-theme-warn: mat.m2-define-palette(mat.$m2-red-palette);
+  $custom-theme: mx-admin-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn, palette.$mx-adm-dark-theme-foreground, palette.$mx-adm-dark-theme-background);
+  // @include mat.all-component-themes($custom-theme);
+  @include theming.mx-adm-material-theme($custom-theme);
+  @include theming.mx-adm-custom-theme($custom-theme);
+  // @include mx-core-theme($custom-theme);
+}
+
+.light-theme {
+  $custom-theme-primary: mat.m2-define-palette(mat.$m2-indigo-palette);
+  $custom-theme-accent: mat.m2-define-palette(mat.$m2-pink-palette);
+  $custom-theme-warn: mat.m2-define-palette(mat.$m2-red-palette);
+  $custom-theme: mx-admin-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn, palette.$mx-adm-light-theme-foreground, palette.$mx-adm-light-theme-background);
+  // @include mat.all-component-themes($custom-theme);
+  @include theming.mx-adm-material-theme($custom-theme);
+  @include theming.mx-adm-custom-theme($custom-theme);
+
+  .mat-toolbar {
+    background: white;
+    color: rgba(0, 0, 0, 0.87);
+}
+  }
