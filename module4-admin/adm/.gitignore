@@ -52,5 +52,6 @@ Thumbs.db
 debug.log
 
 **/build/
-components
+components/
+!src/main/webapp/src/app/shared/components/
 .bit/
