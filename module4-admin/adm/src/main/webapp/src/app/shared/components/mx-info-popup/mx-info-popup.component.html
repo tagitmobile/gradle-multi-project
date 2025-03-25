@@ -1,0 +1,40 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-dialog-content class="accent-color" class="mxDialogContent">
+    <div fxLayout="row" fxLayoutAlign="center center"
+      [ngClass]="(data?.popupType === 'Success' )? 'mx-status-Successimg mx-m-b-11' : 'mx-status-img' ">
+      <div *ngIf="data.popupType === 'Info'">
+        <img [src]="infoImgUrl" alt="Info">
+      </div>
+      <div *ngIf="data.popupType === 'Error'">
+        <img [src]="errorimgurl" alt="Error">
+      </div>
+      <div *ngIf="data.popupType === 'Success'">
+        <img [src]="successimgurl" alt="Success">
+      </div>
+    </div>
+
+    <div fxLayout="row" [ngClass]="(data?.popupType === 'Success' )? 'mx-height' : ''" fxLayoutAlign="center center">
+      <h2 [ngClass]="(data?.popupType === 'Success' )? 'success mx-dg-Successheading mx-m-b-11' : ''"
+        class="mx-dg-heading">{{data.heading | translate}}</h2>
+    </div>
+    <div *ngIf="data.refId" [ngClass]="(data?.popupType === 'Success' )? 'mx-dg-successMsg' : 'mx-dg-message'">
+      {{data.message | translate}}{{data.refId}}
+    </div>
+    <div *ngIf="!data.refId" [ngClass]="(data?.popupType === 'Success' )? 'mx-dg-successMsg' : 'mx-dg-message'">
+      {{data.message | translate}}
+    </div>
+    <!-- <div *ngIf="data.refId" class="mx-dg-ref mx-m-b-12">
+      Reference ID: {{data.refId}}
+    </div> -->
+    <!-- Iteration block start -->
+
+    <div *ngFor="let errdet of data.errDetails" class="mx-dg-message">
+      {{errdet.field | translate}} :: {{errdet.message | translate}}
+    </div>
+    <!-- Iteration block end -->
+  </mat-dialog-content>
+  <div mat-dialog-actions>
+    <button mat-flat-button color="accent" [ngClass]="(data?.popupType === 'Success' )? 'successButton' :'' "
+      (click)="mxPopupActionHander(data)">{{'COMMON.ok' | translate}}</button>
+  </div>
+</div>

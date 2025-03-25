@@ -1,0 +1,41 @@
+<mat-toolbar class="ref-Header">
+  <h3>{{subTitle | translate}}: {{data?.refId}}</h3>
+</mat-toolbar>
+<div fxLayout="column">
+  <div fxLayout="row" fxLayout.xs="column">
+    <div [fxFlex]="100" [fxFlex.lt-md]="100" fxLayoutWrap>
+      <div fxLayout="column" fxFlexFill>
+        <mat-accordion multi>
+          <mat-expansion-panel expanded>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h3>{{'CUSTOMER.CUSTOMER_SUCCESS' | translate}}</h3>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div fxLayout="row" fxLayoutAlign="center center" class="mx-success-img">
+              <div *ngIf="data?.popupType === 'COMMON.SUCCESS'">
+                <img [src]="successimgurl" alt="Success" class="mx-success-img-style">
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" class="mx-am-m-b-10">
+              <h2 [ngClass]="(data?.popupType === 'COMMON.SUCCESS' )? 'Success' : 'failure'">{{data?.popupType |
+                translate}}
+              </h2>
+            </div>
+            <div fxLayout="row" class="mx-width mx-am-m-b-15" fxLayoutAlign="center center">
+              {{data?.message | translate}} {{data?.refId}}
+            </div>
+            <!-- <div *ngIf="data?.refId" class="align-cen mx-am-m-b-15">
+              {{'CUSTOMER.CUSTOMER_REF_ID' | translate}} {{data?.refId}}
+            </div> -->
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <button mat-raised-button class="mx-primay-btn"
+                *ngIf="data?.popupType === 'COMMON.SUCCESS' && data?.button"
+                (click)="backtoWorkflow(data?.button,data?.from)">{{data?.button | translate}}</button>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+</div>

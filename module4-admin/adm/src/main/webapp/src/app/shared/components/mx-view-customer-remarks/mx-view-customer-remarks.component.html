@@ -1,0 +1,131 @@
+<div class="reason-container">
+    <div fxLayout="column" *ngFor="let label of reasonTabLabel;let i=index">
+        <div fxLayout="row" class="row" fxLayoutAlign="start start" fxLayoutGap="1rem" *ngIf="label?.value">
+            <div fxLayout="column" fxFlex="1" class="bgColorDiv">
+                <span *ngIf="i === 0" class="icon-info_icon bgcolor"></span>
+            </div>
+            <div fxLayout="column" fxFlex="30" class="mx-info-font">{{label?.name}}</div>
+            <div fxLayout="column" fxFlex="65" class="mx-info-font">{{label?.value}}</div>
+        </div>
+    </div>
+</div>
+<div fxLayout="column">
+    <mat-toolbar class="ref-Header">
+        <h3>{{subTitle | translate}}: {{customerMgmtReference}}</h3>
+    </mat-toolbar>
+    <div fxLayout="column" class="ref-Header">
+        <div fxLayout="row" fxLayout.xs="column">
+            <div [fxFlex]="100" [fxFlex.lt-md]="100" fxLayoutWrap>
+                <div fxLayout="column" fxFlexFill>
+                    <mat-accordion multi>
+                        <mat-expansion-panel expanded *ngFor="let customer of custDetails;">
+                            <mat-expansion-panel-header class="basic-Info-Header">
+                                <mat-panel-title class="mx-accord-headerText">
+                                    {{customer.title|translate}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div fxLayout="column" fxLayoutGap="0.75rem">
+                                <mx-ac-table [clientSide]="false" [data]="tableData"
+                                    *ngIf="customer.title === 'CUSTOMER_MANAGEMENT.CUSTOMER_LINK_CIF_DETAILS'"
+                                    [filterChanged$]="filterChanged" [headers]="headersWorkFlowList"></mx-ac-table>
+                                <mx-ac-table [clientSide]="false" [data]="table2Data"
+                                    *ngIf="customer.title === 'CUSTOMER_MANAGEMENT.CUSTOMER_OTHER_LINKED_CIF_DETAILS'"
+                                    [filterChanged$]="filterChanged" [headers]="headersWorkFlowList1"></mx-ac-table>
+                                <div fxLayout="row" fxLayoutGap="0.75rem">
+                                    <div fxLayout="row" *ngIf="customer.subtitle" class="mx-rb-subTitle">
+                                        <span>{{customer.subtitle |translate}}</span>
+                                    </div>
+                                </div>
+                                <div fxLayout="row" *ngFor="let cust of customer.subfieldDetails;"
+                                    fxLayoutGap="0.75rem">
+                                    <div fxLayout="row" fxFlex.xs="50" fxFlex="35" fxLayoutAlign="start start"
+                                        fxLayoutGap="0.75rem">
+                                        <div fxLayout="column" fxFlex="60">
+                                            <div fxLayout="row" class="mx-rb-font">
+                                                <span>{{cust.label |translate}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Left Hand Side sub Dynamic Values -->
+                                    <div fxLayout="row" fxFlex.xs="50" fxFlex="75" fxLayoutAlign="start start"
+                                        fxLayoutGap="0.75rem">
+                                        <div fxLayout="column" fxFlex="60">
+                                            <div fxLayout="row" class="mx-rb-font">
+                                                <span *ngIf="cust.value!==''">{{cust.value}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div fxLayout="row" fxLayoutGap="0.75rem">
+                                    <div fxLayout="row" *ngIf="customer.subtitle1" class="mx-rb-subTitle">
+                                        <span>{{customer.subtitle1 |translate}}</span>
+                                    </div>
+                                </div>
+                                <div fxLayout="row" *ngFor="let cust of customer.subfieldDetails1;"
+                                    fxLayoutGap="0.75rem">
+                                    <div fxLayout="row" fxFlex.xs="50" fxFlex="35" fxLayoutAlign="start start"
+                                        fxLayoutGap="0.75rem">
+                                        <div fxLayout="column" fxFlex="60">
+                                            <div fxLayout="row" class="mx-rb-font">
+                                                <span>{{cust.label |translate}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Left Hand Side sub Dynamic Values -->
+                                    <div fxLayout="row" fxFlex.xs="50" fxFlex="75" fxLayoutAlign="start start"
+                                        fxLayoutGap="0.75rem">
+                                        <div fxLayout="column" fxFlex="60">
+                                            <div fxLayout="row" class="mx-rb-font">
+                                                <span *ngIf="cust.value!==''">{{cust.value}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div fxLayout="row" *ngFor="let cust of customer.fieldDetails;" fxLayoutGap="0.75rem">
+                                    <div fxLayout="row" fxFlex.xs="50" fxFlex="35" fxLayoutAlign="start start"
+                                        fxLayoutGap="0.75rem">
+                                        <div fxLayout="column" fxFlex="60">
+                                            <div fxLayout="row" class="mx-rb-font">
+                                                <span>{{cust.label |translate}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Left Hand Side Dynamic Values -->
+                                    <div fxLayout="row" fxFlex.xs="50" fxFlex="75" fxLayoutAlign="start start"
+                                        fxLayoutGap="0.75rem">
+                                        <div fxLayout="column" fxFlex="60">
+                                            <div fxLayout="row" class="mx-rb-font">
+                                                <span *ngIf="cust.value!==''">{{cust.value}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel *ngIf="workflow && reject" expanded>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <h3>{{'CUSTOMER.CUSTOMER_REASON_FOR_REJECT' | translate}}</h3>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div [formGroup]="rejectForm" *ngIf="reject">
+                                <mat-form-field class="remarks-input">
+                                    <mat-label>{{'CUSTOMER.CUSTOMER_REMARKS' | translate}}</mat-label>
+                                    <textarea formControlName="remark" #remarks matInput maxlength="255"></textarea>
+                                    <mat-hint align="end">{{remarks.value.length}} / 255</mat-hint>
+                                </mat-form-field>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div fxLayout="column" class="buttonSection">
+        <div fxFlex fxLayout="row wrap" class="mx-am-p-10" fxLayoutGap="12px" fxLayoutAlign="start start">
+            <button mat-raised-button class="btn" (click)="cancel()">{{'CUSTOMER.CUSTOMER_CANCEL' | translate}}</button>
+            <button mat-raised-button [disabled]="!rejectForm.valid" (click)="rejectremarks()"
+                class="mx-suspend-btn">{{'CUSTOMER.CUSTOMER_REJECT' | translate}}</button>
+        </div>
+    </div>
+</div>

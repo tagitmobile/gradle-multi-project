@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>{{data.heading | translate}}</h1>
+<form (ngSubmit)="onActionHandler()" [formGroup]="feedBackForm">
+  <div mat-dialog-content>
+    <div *ngIf="data.type === 'mxConfirmation'; else feedback;">
+      <p class="mx-feedback-input">{{data.message | translate}}</p>
+    </div>
+    <ng-template #feedback>
+      <mat-form-field *ngIf="data.type === 'suspend'" class="mx-feedback-input">
+        <!-- <textarea matInput placeholder="Remarks" formControlName="feedback" maxlength="255" #feedback cdkFocusInitial></textarea>
+        <mat-hint align="end">{{feedback.value.length}} / 255</mat-hint>
+        <mat-error *ngIf="feedBackForm.get('feedback').invalid">{{'confirmPopup.remarks' | translate}}</mat-error> -->
+        <mat-label>{{'CUSTOMER.CUSTOMER_REMARKS' | translate}}</mat-label>
+        <textarea formControlName="feedback" #remarks matInput maxlength="200"></textarea>
+        <mat-hint align="end">{{remarks.value.length}} / 200</mat-hint>
+      </mat-form-field>
+      <div *ngIf="data.type === 'reset_device'">
+        <p>{{ 'CUSTOMER.CUSTOMER_WANT_TO_RESET_DEVICE' | translate}}</p>
+        <input class="mx-input" matInput autocomplete="off"
+          placeholder="Note: All the registered devices will be reset." formControlName="feedback" maxlength="0">
+      </div>
+    </ng-template>
+  </div>
+  <div mat-dialog-actions fxLayout="row" fxLayoutAlign="end center" class="mx-button">
+    <button mat-flat-button type="button" class="mx-back-btn"
+      mat-dialog-close>{{data.actions[1].name |  translate}}</button>
+    <button mat-flat-button type="submit" class="mx-success-btn" color="accent"
+      *ngIf="data.actions[0].data.action ==='feedback'"
+      [style.background]="data.actions[0].color">{{data.actions[0].name |  translate}}</button>
+    <button mat-flat-button type="button" class="mx-success-btn" color="accent"
+      *ngIf="data.actions[0].data.action !=='feedback'" (click)="onActionHandler()"
+      [style.background]="data.actions[0].color">{{data.actions[0].name |  translate}}</button>
+  </div>
+</form>

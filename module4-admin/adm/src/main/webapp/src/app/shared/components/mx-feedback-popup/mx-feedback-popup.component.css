@@ -1,0 +1,51 @@
+.mx-feedback-input {
+  width: 348px;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 16px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2a2a2a;
+}
+
+.mx-input{
+  width: 378px;
+  height: 36px;
+  background-color: #f0f0f0;
+}
+
+.mat-dialog-actions {
+  padding: 25px 0;
+}
+
+.mat-dialog-title {
+  color: #0058a5;
+}
+
+.mx-success-btn {
+  width: 108px;
+  height: 36px;
+  }
+
+.mx-back-btn {
+  width: 108px;
+  height: 36px;
+  background-color: #ffffff;
+  border: solid 1px #95989a;
+}
+
+textarea {
+  height: 15px;
+  min-height: 15px !important;
+  max-height: 90px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-weight: normal;
+  font-size: 16px !important;
+}

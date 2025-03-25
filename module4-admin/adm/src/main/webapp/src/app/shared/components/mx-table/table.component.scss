@@ -1,0 +1,134 @@
+table {
+  width: 100%;
+}
+.mx-element-detail {
+  overflow: hidden;
+  display: flex;
+  align-items: start;
+  background-color: #f7f7f7;
+  box-shadow: inset 2px 3px 8px #f7f7f7;
+  border-radius: 8px;
+  min-width: 96%;
+}
+.mx-icon-pointer {
+  cursor: pointer;
+}
+
+/* To align the icons in the Actions cell */
+.mx-align {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+:host ::ng-deep.mat-paginator .mat-form-field-underline {
+  display: none;
+}
+
+.mxDatatableContainer {
+  width: 100%;
+  font-size: 13px;
+  // font-weight: 500;
+  table {
+    width: 100%;
+  }
+  .mxDataTableToolbar {
+    width: 100%;
+    .mxDataTableColumnFilterIcon {
+      float: right;
+      cursor: pointer;
+    }
+  }
+  .mxDataTableMobileLabels {
+    display: none;
+  }
+  .mx-no-data-found {
+    margin: 0px auto;
+    width: 100%;
+    text-align: center;
+    span {
+      display: block;
+      width: 100%;
+      line-height: normal;
+    }
+  }
+}
+
+.mxDatatableContainer_xs {
+  width: 100%;
+  table {
+    border: 0;
+    vertical-align: middle;
+    caption {
+      font-size: 1em;
+    }
+    tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      height: auto;
+    }
+    td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 1em;
+      text-align: right;
+      font-weight: bold;
+      height: 30px;
+      margin-top: 0px;
+      padding: 0px 15px;
+      .mxActionButton {
+        width: 20px;
+        .mat-icon {
+          font-size: 20px;
+        }
+      }
+    }
+    .mxDataTableMobileLabels {
+      display: inline;
+      float: left;
+      text-transform: titlecase;
+      font-weight: normal;
+      font-size: 0.85em;
+    }
+    td:last-child {
+      border-bottom: 0;
+      margin-bottom: 10px;
+    }
+    td:first-child {
+      margin-top: 10px;
+    }
+  }
+}
+.mx-row-height {
+  min-height: 0px;
+}
+.mx-p-r-12 {
+  padding-right: 12px;
+}
+
+.mat-paginator {
+  display: flex;
+  justify-content: flex-end;
+}
+
+::ng-deep .mat-paginator-container {
+  justify-content: space-between !important;
+}
+::ng-deep .mat-paginator-outer-container {
+  width: 100%;
+}
+// ::ng-deep .light-theme .mat-sort-header-content {
+//   color: #000;
+// }
+// ::ng-deep .dark-theme .mat-sort-header-content {
+//   color: #fff;
+// }
+.mx-auto-width {
+  flex: 1;
+}
+mat-cell,
+mat-header-cell,
+mat-footer-cell {
+  word-break: break-word;
+  flex: initial;
+}

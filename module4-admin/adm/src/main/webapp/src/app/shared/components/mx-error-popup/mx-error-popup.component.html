@@ -1,0 +1,36 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-dialog-content class="accent-color" class="mxDialogContent">
+    <div fxLayout="row" fxLayoutAlign="center center" class="mx-status-img">
+      <div *ngIf="data.popupType === 'Error'">
+        <img [src]="errorimgurl" alt="Error">
+      </div>
+      <div *ngIf="data.popupType === 'Success'">
+        <img [src]="successimgurl" alt="Success">
+      </div>
+      <div>
+        <img [src]="errorimgurl" alt="Error">
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <h2 class="mx-dg-heading mx-m-b-24">{{'MX_AC_COMMON.COMMON_SCHEDULER' | translate}}</h2>
+    </div>
+    <div class="mx-dg-message">
+      {{'MX_AC_COMMON.COMMON_WRONG' | translate}}
+    </div>
+    <div *ngIf="data.refId" class="mx-dg-ref mx-m-b-12">
+      Reference ID: {{data.refId}}
+    </div>
+    <!-- Iteration block start -->
+
+    <div *ngFor="let errdet of data.errDetails" class="mx-dg-message">
+      {{errdet.field | translate}} :: {{errdet.message | translate}}
+    </div>
+    <!-- Iteration block end -->
+  </mat-dialog-content>
+  <div mat-dialog-actions>
+    <button mat-flat-button color="primary" (click)="mxPopupActionHander(data)"
+      style="background: rgb(0, 189, 205)">{{'MX_AC_COMMON.COMMON_CANCEL' |
+      translate}}</button>
+  </div>
+</div>
