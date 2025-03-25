@@ -1,0 +1,70 @@
+.ref-Header {
+    // background-color: white;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.align-cen {
+    text-align: center;
+}
+
+.mat-expansion-panel-header {
+  border-top: 2px solid #f0f0f0;
+  border-bottom: 3px solid #f0f0f0;
+}
+
+.Success {
+  color: #4c9c4b;
+  margin: 0 !important;
+}
+
+.failure {
+  color: red;
+  margin: 0 !important;
+}
+
+//Button style starts
+.mx-primay-btn {
+  background-color: #00bdcd;
+  color: #ffffff;
+}
+
+.btn {
+  background-color: #ffffff;
+}
+
+.mx-width {
+  margin: 0px 330px;
+  text-align: center;
+}
+.mx-success-img-style{
+  width: 44px;
+  height: 44px;
+}
+
+// Button style ends
+
+  
+  @for $i from 1 through 200 {
+    .mx-am-m-b-#{$i} {
+      margin-bottom:#{$i}px
+    }
+  }
+  
+  @for $i from 1 through 200 {
+    .mx-am-m-t-#{$i} {
+        margin-top: #{$i}px
+    }
+  }
+  
+  @for $i from 1 through 200 {
+    .mx-am-p-t-#{$i} {
+        padding-top: #{$i}px
+    }
+  }
+  
+  @for $i from 1 through 200 {
+    .mx-am-p-b-#{$i} {
+        padding-bottom: #{$i}px
+    }
+  }
+  

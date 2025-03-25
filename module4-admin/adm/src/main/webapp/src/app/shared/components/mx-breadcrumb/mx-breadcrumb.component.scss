@@ -1,0 +1,67 @@
+$activeFontColor: #00bdcd;
+$fontColor: #2a2a2a;
+.mx-mi-breadcrumb {
+    $self: &;
+    font-size: 13px;
+    &--item:last-child {
+        #{ $self }--text {
+            color: $fontColor;
+        }
+    }
+    padding-left: 12px;
+}
+
+.breadcrumb-cursor {
+    cursor: pointer;
+}
+
+.mx-rb-breadcrumb-arrow-class {
+    width: 6px;
+    display: block;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.breadcrumb-home {
+    color: #6f6f6f;
+    width: 16px;
+    display: block;
+    background-size: auto;
+    margin-right: 3px;
+}
+
+.mx-nav-info-wrapper {
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+.mx-rb-title {
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #0058a5;
+    margin-bottom: 11px;
+    padding-left: 12px;
+}
+
+.arrow-left {
+    height: 4px;
+    width: 4px;
+    border: 1.5px solid;
+    transform: rotate(45deg);
+    border-bottom: transparent;
+    border-left: transparent;
+}
+::ng-deep .light-theme .mx-mi-breadcrumb {
+    .arrow-left.mx-breadcrumb-arrow-left {
+        border-color: #000;
+    }
+}
+::ng-deep .dark-theme .mx-mi-breadcrumb {
+    .arrow-left.mx-breadcrumb-arrow-left {
+        border-color: #fff;
+    }
+}

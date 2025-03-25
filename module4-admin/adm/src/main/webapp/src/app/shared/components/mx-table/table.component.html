@@ -1,0 +1,161 @@
+<div class="mxDatatableContainer" ngClass.lt-md='mxDatatableContainer_xs'>
+    <mat-table [dataSource]="dataSource" matSort class="mxDatatable" multiTemplateDataRows
+        (matSortChange)="onSortChange($event)">
+        <ng-container *ngFor="let col of headers;let i= index" [matColumnDef]="col.prop">
+            <mat-header-cell *matHeaderCellDef [style.width]="col.width" [ngClass]="col.width ? '':
+            'mx-auto-width'" [ngClass]="headers[i].classname">
+                <mat-checkbox id="checkBox" *ngIf="col.type==='check'" (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"></mat-checkbox>
+                <span mat-sort-header>
+                    {{headers[i].name | translate}}
+                </span>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row; let i=index" [ngClass]="col.width ? '': 'mx-auto-width'"
+                [style.width]="col.width">
+                <ng-container *ngIf="col.type === 'multiLink'">
+                    <div fxLayout="column">
+                        <a href="javascript:void(0)" *ngFor="let link of row[col.prop]" [ngClass]="col.classname"
+                            (click)="onLinkClick(row, i, link)">{{link}}</a>
+                    </div>
+                </ng-container>
+
+                <ng-container *ngIf="col.type === 'object'">
+                    <ng-container *ngFor="let obj of row[col.prop]">
+
+                        <ng-container *ngIf="obj.type !== 'link'">
+                            <div [ngClass]='obj.classname' class="mx-p-r-12">
+                                {{obj.value}}</div>
+                        </ng-container>
+
+                        <ng-container *ngIf="obj.type === 'link'">
+                            <a [ngClass]="obj.classname" href="javascript:void(0)"
+                                (click)="onObjLinkClick(row,i,obj)">{{obj.value}}</a>
+                        </ng-container>
+
+
+                    </ng-container>
+                </ng-container>
+
+                <ng-container *ngIf="col.type === 'link'">
+                    <a [ngClass]="col.classname" href="javascript:void(0)"
+                        (click)="onLinkClick(row,i)">{{row[col.prop]}}</a>
+                </ng-container>
+                <ng-container *ngIf="col.type === 'dot'">
+                    <div [ngClass]=" 'mx-' + col.prop +'-' + row[col.prop]"></div>{{row[col.prop]}}
+                </ng-container>
+                <ng-container *ngIf="col.type === 'custom'">
+                    <div class="mxStatusBtn" [ngClass]=" 'mx-' + col.prop +'-' + row[col.prop]">{{row[col.prop]}}</div>
+                </ng-container>
+
+                <ng-container *ngIf="col.type === 'menu'">
+                    <button mat-icon-button [matMenuTriggerFor]="action" aria-label="Action Button">
+                        <mat-icon>more_vert</mat-icon>
+                        <mat-menu #action="matMenu">
+                            <ng-container *ngFor="let action of actionList">
+                                <button mat-menu-item *ngIf="row[action.prop]" (click)="onActionClick(action, row, i)">
+                                    <mat-icon>{{action.icon}}</mat-icon>
+                                    <span>{{action.name | translate}}</span>
+                                </button>
+                            </ng-container>
+
+                        </mat-menu>
+                    </button>
+                </ng-container>
+                <ng-container *ngIf="col.type === 'check'">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="onCheckedChange(row,i)"
+                        [checked]="selection.isSelected(row)"></mat-checkbox>
+                </ng-container>
+                <ng-container *ngIf="col.type === 'radio'">
+                    <mat-radio-button (change)="onChangeRadio(row)"></mat-radio-button>
+                </ng-container>
+                <ng-container *ngIf="col.type === 'date'">
+                    <div>
+                        {{row[col.prop] | mxDate: col.dateConfig?.format || undefined:col.dateConfig?.timezone ||
+                        undefined }}
+                    </div>
+                </ng-container>
+
+                <ng-container *ngIf="col.type === 'currency'">
+                    <div>
+                        {{row[col.prop] | mxCurrency: col.curConfig?.curCode || undefined: col.curConfig?.display ||
+                        undefined: col.curConfig?.digitsInfo }}
+                    </div>
+                </ng-container>
+                <!-- Expansion starts here -->
+                <ng-container *ngIf="col.type === 'icon'">
+                    <button class="mx-search-filter-icons" (click)="checkforExpanded(row)" mat-icon-button>
+                        <mat-icon>expand_more</mat-icon>
+                    </button>
+                </ng-container>
+                <!-- Expansion ends here -->
+                <ng-container *ngIf="!col.type">
+                    <div>{{row[col.prop]}}</div>
+                </ng-container>
+
+            </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="expandedDetail">
+            <mat-cell *matCellDef="let row" [attr.colspan]="displayedColumns.length" class="row mx-element-detail"
+                [@detailExpand]="row.isExpanded ? 'expanded' : 'collapsed'">
+                <mat-list *ngFor="let data of row.expandData">
+                    <p mat-line>Created By</p>
+                    <p mat-line>Name</p>
+                    <p mat-line>Created Date & Time</p>
+                </mat-list>
+                <mat-list *ngFor="let data of row.expandData" style="padding-left: 5%;">
+                    <p mat-line>{{data.createdBy}}</p>
+                    <p mat-line>{{data.name}}</p>
+                    <p mat-line>{{data.createdDate}}</p>
+                </mat-list>
+                <mat-list *ngFor="let data of row.changesData" style="padding-left: 15%;">
+                    <p mat-line>{{data.label}} By</p>
+                    <p mat-line>Name</p>
+                    <p mat-line>{{data.label}} Date & Time</p>
+                </mat-list>
+                <mat-list *ngFor="let data of row.changesData" style="padding-left: 5%;">
+                    <p mat-line>{{data.createdBy}}</p>
+                    <p mat-line>{{data.name}}</p>
+                    <p mat-line>{{data.createdDate}}</p>
+                </mat-list>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        <mat-row class="mx-row-height" *matRowDef="let row; columns: ['expandedDetail'];"></mat-row>
+    </mat-table>
+    <div *ngIf="tableData.length===0" class="mx-no-data-found">
+        <img src="{{imageurl}}/assets/icons/norecord_icon.png" alt="No Record Found">
+        <span class="mx-p-b-10">
+            <span *ngIf="emptyMessageContent">
+                <ng-content select="mx-table-empty-message"></ng-content>
+            </span>
+            <span *ngIf="noDataFound">
+                {{noDataFound | translate}}
+            </span>
+        </span>
+    </div>
+
+    <!-- To Handle the client side search empty data message -->
+    <div *ngIf="tableData.length !==0 && isClientSearch && filterTableData.length === 0 " class="mx-no-data-found">
+        <img src="{{imageurl}}/assets/icons/norecord_icon.png" alt="No Record Found">
+        <span class="mx-p-b-10">
+            <ng-container *ngIf="emptyMessageContent; else emptyMsgtpl">
+                <ng-content select="mx-table-empty-message"></ng-content>
+            </ng-container>
+            <ng-template #emptyMsgtpl>
+                {{noDataFound | translate}}
+            </ng-template>
+        </span>
+    </div>
+    <!-- Pagination -->
+
+    <mat-paginator *ngIf="tableData.length > 0 && paginatorData" [pageSizeOptions]="paginatorData.sizeOption"
+        (page)="onPageChange($event)" [pageSize]="paginatorData.itemPerPage" [length]="totalRecords"
+        (click)="paginatorClick()">
+    </mat-paginator>
+
+</div>

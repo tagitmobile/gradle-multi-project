@@ -1,0 +1,12 @@
+<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="12px" class="mx-mi-breadcrumb" fxHide.xs>
+    <div *ngFor="let url of breadcrumbUrls;let firstUrl = first, let lastUrl = last" fxLayout="row"
+        fxLayoutAlign="start center" fxLayoutGap="5px">
+        <ng-container *ngIf="firstUrl">
+            <mat-icon>home</mat-icon>
+            <div *ngIf="!lastUrl" class="mx-breadcrumb-arrow-left arrow-left"></div>
+        </ng-container>
+        <span (click)="onClickAction(url)" [ngClass]="(url.actionIcon===true) ? 'breadcrumb-cursor': ''">{{url.label|
+            translate}}</span>
+        <div *ngIf="!lastUrl" class="mx-breadcrumb-arrow-left arrow-left"></div>
+    </div>
+</div>

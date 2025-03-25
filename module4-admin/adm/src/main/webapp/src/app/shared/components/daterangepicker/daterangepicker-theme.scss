@@ -1,0 +1,115 @@
+@use "sass:map";
+@use '@angular/material' as mat; dsfdf
+@mixin date-range-picker-theme($theme) {
+    $primary: map.get($theme, primary);
+    $accent: map.get($theme, accent);
+    $background: map.get($theme, background);
+    $foreground: map.get($theme, foreground);
+
+    .md-drppicker {
+        background-color: mat.m2-get-color-from-palette($background, dialog);
+        color: mat.m2-get-color-from-palette($foreground, text);
+
+        td,
+        th {
+            &.available {
+                &:hover {
+                    background-color: mat.m2-get-color-from-palette($background, hover);
+                    color: mat.m2-get-color-from-palette($foreground, text);
+                }
+            }
+        }
+
+        td {
+            &.off {
+                &,
+                &.in-range,
+                &.start-date,
+                &.end-date {
+                    background-color: mat.m2-get-color-from-palette($background, dialog);
+                    border-color: mat.m2-get-color-from-palette($background, dialog);
+                    color: mat.m2-get-color-from-palette($foreground, disabled);
+                }
+            }
+
+            &.in-range {
+                background-color: mat.m2-get-color-from-palette($background, disabled-list-option);
+                border-color: mat.m2-get-color-from-palette($background, disabled-list-option);
+                color: mat.m2-get-color-from-palette($foreground, text);
+            }
+
+            &.active {
+                transition: background 300ms ease-out, border 300ms ease-out;
+                background: rgba(0, 0, 0, 0.1);
+                &,
+                &:hover {
+                    background-color: mat.m2-get-color-from-palette($primary);
+                    color: mat.m2-get-color-from-palette($primary, default-contrast);
+                }
+            }
+        }
+
+        .ranges {
+            ul {
+                li {
+                    button {
+                        border-radius: 4px;
+                        color: mat.m2-get-color-from-palette($foreground, text);
+
+                        &.active {
+                            background-color: mat.m2-get-color-from-palette($primary);
+                            color: mat.m2-get-color-from-palette($primary, default-contrast);
+                        }
+                    }
+
+                    &:hover {
+                        border-radius: 4px;
+                        background-color: mat.m2-get-color-from-palette($background, hover);
+                        color: mat.m2-get-color-from-palette($primary, default-contrast);
+                    }
+                }
+            }
+        }
+
+        .calendar-icon::after {
+            border-color: mat.m2-get-color-from-palette($foreground, text);
+        }
+    }
+}
+
+// Styles for the docs app that are based on the current theme.
+@mixin material-docs-app-theme($theme) {
+    $primary: map.get($theme, primary);
+    $accent: map.get($theme, accent);
+    $warn: map.get($theme, warn);
+    $background: map.get($theme, background);
+    $foreground: map.get($theme, foreground);
+    $next-theme: mat.m2-define-palette(mat.$m2-red-palette);
+
+    .docs-app-background {
+        background: mat.m2-get-color-from-palette($background, background);
+    }
+
+    body {
+        color: mat.m2-get-color-from-palette($foreground, text);
+    }
+
+    .docs-footer {
+        background: mat.m2-get-color-from-palette($primary);
+        color: mat.m2-get-color-from-palette($primary, default-contrast);
+    }
+
+    .is-next-version {
+        background: mat.m2-get-color-from-palette($next-theme, 900) !important;
+    }
+
+    @include date-range-picker-theme($theme);
+}
+
+// Define the light theme.
+$primary: mat.m2-define-palette(mat.$m2-indigo-palette);
+$accent: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
+
+$theme: mat.m2-define-light-theme($primary, $accent);
+
+@include material-docs-app-theme($theme);

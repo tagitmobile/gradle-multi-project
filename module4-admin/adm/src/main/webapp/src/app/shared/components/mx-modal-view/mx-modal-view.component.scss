@@ -1,0 +1,127 @@
+.mx-feedback-input {
+    // width: 348px;
+    // padding: 0 !important;
+    // margin: 0 !important;
+    height: 16px;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2a2a2a;
+    padding-top: 16px;
+  }
+  
+  .mx-input{
+    width: 378px;
+    height: 36px;
+    background-color: #f0f0f0;
+    font-size: 15px;
+  }
+  
+  .mat-dialog-actions {
+    padding: 25px 0;
+  }
+  
+  .mat-dialog-title {
+    color: #0058a5;
+  }
+    
+  ::ng-deep .mx-success-btn {
+      width: 108px;
+      height: 36px;
+      background: #0058a5;
+      color: white;
+  }
+  
+  .mx-success-btn {
+    width: 108px;
+    height: 36px;
+    }
+  
+  .mx-back-btn {
+    width: 108px;
+    height: 36px;
+    background-color: #ffffff;
+    border: solid 1px #95989a;
+  }
+  
+  textarea {
+    // height: 15px;
+    min-height: 15px !important;
+    max-height: 90px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-weight: normal;
+    font-size: 16px !important;
+  }
+
+  .mat-dialog-content{
+      padding: 16px 0px;
+  }
+  ::ng-deep .light-theme,.dark-theme{
+    .successButton {
+      height: 36px !important;
+      background-color: #0058a5 !important;
+    }
+  }
+
+  ::ng-deep .light-theme,.dark-theme{
+    .mx-dg-Successheading {
+      font-size: 20px;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 !important;
+    }
+  }
+
+ ::ng-deep .light-theme,.dark-theme{
+  .mx-dg-message {
+    font-size: 18px;
+    line-height: 1.67;
+    font-weight: normal;
+    width: 319px;
+    text-align: center;
+  }
+ }
+
+ ::ng-deep .light-theme,.dark-theme{
+  .mx-dg-successMsg {
+    font-size: 14px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2a2a2a;
+    margin-top: 20px;
+  }
+ }
+
+::ng-deep .light-theme,.dark-theme{
+  .mx-dg-heading {
+    font-size: 36px;
+    color: #2d2d2d;
+  }
+  .mx-input{
+    width: 378px;
+    height: 36px;
+    background-color: #f0f0f0;
+    font-size: 15px;
+  }
+}
+
+::ng-deep .light-theme,.dark-theme{
+  .success {
+    color: #4c9c4b;
+  }
+}
+
+.width{
+  width: 100%;
+}
+
+
+::ng-deep .mat-dialog-content {
+  margin: unset !important;
+  overflow: hidden !important;
+}
