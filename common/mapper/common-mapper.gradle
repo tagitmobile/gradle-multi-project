@@ -1,7 +1,0 @@
-description = 'Common Mapper'
-
-dependencies {
-    api project(':common:common-core')
-}
-
-defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

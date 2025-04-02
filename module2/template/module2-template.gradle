@@ -1,8 +1,0 @@
-description = 'Module 2 Template'
-
-dependencies {
-    api project(':common:common-template')
-    api project(':module2:module2-core')
-}
-
-defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

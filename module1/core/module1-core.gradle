@@ -1,8 +1,0 @@
-description = 'Module 1 Core'
-
-dependencies {
-    api project(':common:common-batch')
-    api project(':common:common-core')
-}
-
-defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'

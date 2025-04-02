@@ -30,7 +30,7 @@ file('.').listFiles().each {
    }
 }
 
-rootProject.name = "sample-services"
+rootProject.name = "proj-sample-services"
 rootProject.children.each {project ->
     // modules
 	println "[settings] Setting ${project} build file name to '${project.name}.gradle'"
