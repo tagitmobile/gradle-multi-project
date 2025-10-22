@@ -89,6 +89,7 @@ task consolidateJars(type: Copy) {
     subprojects.each {
 		if (rootProject != it && rootProject != it.getParent()) {
 			consolidateJars.dependsOn("${it.path}:build")
+			consolidateJars.dependsOn("${it.path}:htmlDependencyReport")
 			jars += it.tasks['copyJar']
 		}
     }
@@ -100,4 +101,4 @@ javadoc {
 	exclude "**/.gitkeep"
 }
 
-defaultTasks 'clean', 'eclipse', 'build', 'consolidateJars'
+defaultTasks 'clean', 'eclipse', 'build', 'consolidateJars', 'htmlDependencyReport'
