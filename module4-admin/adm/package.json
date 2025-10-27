@@ -10,7 +10,7 @@
     "postinstall:bak": "",
     "build2": "node --max_old_space_size=8192 node_modules/\\@angular/cli/bin/ng build --prod --aot",
     "postinstall": "",
-    "build": "ng build --configuration production --extra-webpack-config src/main/webapp/webpack.externals.js  --project custom-admin --single-bundle --output-hashing none && node build-elements.js custom-admin --outputPath=/Users/surendher/Desktop/Tagit/Code_base/mobeix-admin-extension/mobeix-admin-extension/custom-admin/admin/dist promoteFolders=assets --watch",
+    "build": "ng build --configuration production --extra-webpack-config src/main/webapp/webpack.externals.js  --project custom-admin --single-bundle --output-hashing none && node build-elements.js custom-admin --outputPath=./web-build/dist promoteFolders=assets --watch",
     "build-custom-admin": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build --configuration production --project custom-admin --single-bundle --output-hashing none && node build-elements.js custom-admin promoteFolders=assets",
     "sonar": "sonar-scanner",
     "obfuscate": "node obfuscate.js",

@@ -37,7 +37,7 @@ dependencies {
 }
 
 compileJava.mustRunAfter { 'npm_run_build' }
-//copyDependencies.mustRunAfter { 'packageNpmApp' }
+copyDependencies.mustRunAfter { 'packageNpmApp' }
 
 //defaultTasks 'clean', 'eclipse', 'build', 'bootJar', 'copyJar', 'htmlDependencyReport'
 defaultTasks 'clean', 'eclipse', 'build', 'copyJar', 'htmlDependencyReport'
